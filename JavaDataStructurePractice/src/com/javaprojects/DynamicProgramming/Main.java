@@ -1,9 +1,13 @@
 package com.javaprojects.DynamicProgramming;
 
+import com.javaprojects.DynamicProgramming.Controller.ConvertBinaryNumberIntoInteger;
 import com.javaprojects.DynamicProgramming.Controller.DivisorGame;
 import com.javaprojects.DynamicProgramming.Controller.MergeBinaryTree;
 import com.javaprojects.DynamicProgramming.Controller.WhereWillTheBallFall;
+import com.javaprojects.DynamicProgramming.Model.ListNode;
 import com.javaprojects.DynamicProgramming.Model.TreeNode;
+
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -63,6 +67,16 @@ public class Main {
         System.out.println("TESTING MERGE TWO BINARY TREES ITERATIVE...");
         MergeBinaryTree mergeBinaryTreeIterative = new MergeBinaryTree();
         System.out.println(mergeBinaryTreeIterative.mergeTrees_ITERATIVE(root1, root2));
+
+        System.out.println("TESTING 1290. Convert Binary Number in a Linked List to Integer... ");
+        ListNode head = new ListNode(1);
+        ListNode head1 = new ListNode(0);
+        ListNode head2 = new ListNode(1);
+        head.setNext(head1);
+        head1.setNext(head2);
+        ConvertBinaryNumberIntoInteger convertBinaryNumberIntoInteger = new ConvertBinaryNumberIntoInteger();
+        System.out.println(convertBinaryNumberIntoInteger.getDecimalValue(head));
+
         System.out.println("END OF TESTING...");
     }
 }
