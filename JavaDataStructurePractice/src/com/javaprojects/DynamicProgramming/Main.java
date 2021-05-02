@@ -1,12 +1,10 @@
 package com.javaprojects.DynamicProgramming;
 
-import com.javaprojects.DynamicProgramming.Controller.ConvertBinaryNumberIntoInteger;
-import com.javaprojects.DynamicProgramming.Controller.DivisorGame;
-import com.javaprojects.DynamicProgramming.Controller.MergeBinaryTree;
-import com.javaprojects.DynamicProgramming.Controller.WhereWillTheBallFall;
+import com.javaprojects.DynamicProgramming.Controller.*;
 import com.javaprojects.DynamicProgramming.Model.ListNode;
 import com.javaprojects.DynamicProgramming.Model.TreeNode;
 
+import java.sql.SQLOutput;
 import java.util.List;
 
 public class Main {
@@ -77,6 +75,19 @@ public class Main {
         ConvertBinaryNumberIntoInteger convertBinaryNumberIntoInteger = new ConvertBinaryNumberIntoInteger();
         System.out.println(convertBinaryNumberIntoInteger.getDecimalValue(head));
 
+        System.out.println("TESTING 2. Add Two Numbers...");
+        ListNode l1 = new ListNode(2);
+        ListNode l1_1 = new ListNode(4);
+        ListNode l1_2 = new ListNode(3);
+        ListNode l2 = new ListNode(5);
+        ListNode l2_1 = new ListNode(6);
+        ListNode l2_2 = new ListNode(4);
+        l1.setNext(l1_1);
+        l1_1.setNext(l1_2);
+        l2.setNext(l2_1);
+        l2_1.setNext(l2_2);
+        AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
+        System.out.println(addTwoNumbers.addTwoNumbers(l1, l2));
         System.out.println("END OF TESTING...");
     }
 }
