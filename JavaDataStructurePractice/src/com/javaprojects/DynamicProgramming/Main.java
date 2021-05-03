@@ -6,6 +6,7 @@ import com.javaprojects.DynamicProgramming.Model.TreeNode;
 import com.javaprojects.DynamicProgramming.View.GraphTraversal;
 
 import java.sql.SQLOutput;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -95,7 +96,15 @@ public class Main {
         String[][] matrix = {{"A", "B", "C"}, {"D", "E", "F"}, {"G", "H", "I"}};
         GraphTraversal graphTraversal = new GraphTraversal();
         graphTraversal.DFS(matrix);
-
+        System.out.println("TESTING 733. Flood Fill");
+        //Test case:
+        int[][] image = {{1,1,1}, {1,1,0}, {1,0,1}};
+        int sr = 1;
+        int sc = 1;
+        int newColor = 2;
+        //Create an instance of the flood fill class:
+        FloodFill floodFill = new FloodFill();
+        System.out.println(Arrays.toString(floodFill.floodFill(image,sr,sc,newColor)));
         System.out.println("END OF TESTING...");
     }
 }
