@@ -3,6 +3,7 @@ package com.javaprojects.DynamicProgramming;
 import com.javaprojects.DynamicProgramming.Controller.*;
 import com.javaprojects.DynamicProgramming.Model.ListNode;
 import com.javaprojects.DynamicProgramming.Model.TreeNode;
+import com.javaprojects.DynamicProgramming.View.GraphTraversal;
 
 import java.sql.SQLOutput;
 import java.util.List;
@@ -88,6 +89,13 @@ public class Main {
         l2_1.setNext(l2_2);
         AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
         System.out.println(addTwoNumbers.addTwoNumbers(l1, l2));
+
+        System.out.println("Depth First Search Traversal!");
+        //creating a graph
+        String[][] matrix = {{"A", "B", "C"}, {"D", "E", "F"}, {"G", "H", "I"}};
+        GraphTraversal graphTraversal = new GraphTraversal();
+        graphTraversal.DFS(matrix);
+
         System.out.println("END OF TESTING...");
     }
 }
