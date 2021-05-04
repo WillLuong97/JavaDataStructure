@@ -1,6 +1,7 @@
 package com.javaprojects.DynamicProgramming;
 
 import com.javaprojects.DynamicProgramming.Controller.*;
+import com.javaprojects.DynamicProgramming.Controller.Greedy.BinaryStringContiguosOne;
 import com.javaprojects.DynamicProgramming.Model.ListNode;
 import com.javaprojects.DynamicProgramming.Model.TreeNode;
 import com.javaprojects.DynamicProgramming.View.GraphTraversal;
@@ -121,7 +122,15 @@ public class Main {
         //test cases:
         char[][] boards = {{'5','3','.','.','7','.','.','.','.'}, {'6','.','.','1','9','5','.','.','.'}, {'.','9','8','.','.','.','.','6','.'}, {'8','.','.','.','6','.','.','.','3'}, {'4','.','.','8','.','3','.','.','1'}, {'7','.','.','.','2','.','.','.','6'}, {'.','6','.','.','.','.','2','8','.'}, {'.','.','.','4','1','9','.','.','5'}, {'.','.','.','.','8','.','.','7','9'}};
         sudoku.printBoard(sudoku.getSudokuBoard(boards));
-        //System.out.println(boards);
+        System.out.println("");
+        System.out.println("TESTING 1784. Check if Binary String Has at Most One Segment of Ones");
+        BinaryStringContiguosOne binaryStringContiguosOne = new BinaryStringContiguosOne();
+        //Test case:
+        String s = "1001";
+        String s_1 = "110";
+        System.out.println(Objects.toString(binaryStringContiguosOne.checkOnesSegment(s)));
+        System.out.println(Objects.toString(binaryStringContiguosOne.checkOnesSegment(s_1)));
+
         System.out.println("END OF TESTING...");
     }
 }
