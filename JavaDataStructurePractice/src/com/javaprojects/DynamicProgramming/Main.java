@@ -8,6 +8,7 @@ import com.javaprojects.DynamicProgramming.View.GraphTraversal;
 import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class Main {
     public static void main(String[] args) {
@@ -115,7 +116,12 @@ public class Main {
         System.out.println(fizzBuzz.fizzBuzz(n_0));
         System.out.println(fizzBuzz.fizzBuzz(n_1));
         System.out.println(fizzBuzz.fizzBuzz(n_2));
-
+        System.out.println("TESTING SUDOKU SOLVER");
+        Sudoku sudoku = new Sudoku();
+        //test cases:
+        char[][] boards = {{'5','3','.','.','7','.','.','.','.'}, {'6','.','.','1','9','5','.','.','.'}, {'.','9','8','.','.','.','.','6','.'}, {'8','.','.','.','6','.','.','.','3'}, {'4','.','.','8','.','3','.','.','1'}, {'7','.','.','.','2','.','.','.','6'}, {'.','6','.','.','.','.','2','8','.'}, {'.','.','.','4','1','9','.','.','5'}, {'.','.','.','.','8','.','.','7','9'}};
+        sudoku.printBoard(sudoku.getSudokuBoard(boards));
+        //System.out.println(boards);
         System.out.println("END OF TESTING...");
     }
 }
