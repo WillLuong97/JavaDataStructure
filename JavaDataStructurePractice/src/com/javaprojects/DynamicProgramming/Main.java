@@ -105,6 +105,17 @@ public class Main {
         //Create an instance of the flood fill class:
         FloodFill floodFill = new FloodFill();
         System.out.println(Arrays.toString(floodFill.floodFill(image,sr,sc,newColor)));
+
+        System.out.println("TESTING OUT FIZZBUZZ");
+        //test cases:
+        int n_0 = 3;
+        int n_1 = 5;
+        int n_2 = 15;
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        System.out.println(fizzBuzz.fizzBuzz(n_0));
+        System.out.println(fizzBuzz.fizzBuzz(n_1));
+        System.out.println(fizzBuzz.fizzBuzz(n_2));
+
         System.out.println("END OF TESTING...");
     }
 }
