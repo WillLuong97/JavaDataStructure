@@ -1,6 +1,7 @@
 package com.javaprojects.DynamicProgramming;
 
 import com.javaprojects.DynamicProgramming.Controller.*;
+import com.javaprojects.DynamicProgramming.Controller.BinarySearch.TimeMap;
 import com.javaprojects.DynamicProgramming.Controller.Greedy.BinaryStringContiguosOne;
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.SeatManager;
 import com.javaprojects.DynamicProgramming.Model.ListNode;
@@ -143,6 +144,15 @@ public class Main {
         System.out.println(seatManager.reserve());    // The only available seat is seat 5, so return 5.
         seatManager.unreserve(5); // Unreserve seat 5, so now the available seats are [5].
 
+
+        System.out.println("TESTING 981. Time Based Key-Value Store");
+        TimeMap kv = new TimeMap();
+        kv.set("foo", "bar", 1); // store the key "foo" and value "bar" along with timestamp = 1
+        System.out.println(kv.get("foo", 1));  // output "bar"
+        System.out.println(kv.get("foo", 3)); // output "bar" since there is no value corresponding to foo at timestamp 3 and timestamp 2, then the only value is at timestamp 1 ie "bar"
+        kv.set("foo", "bar2", 4);
+        System.out.println(kv.get("foo", 4)); // output "bar2"
+        System.out.println(kv.get("foo", 5)); //output "bar2"
         System.out.println("END OF TESTING...");
     }
 }
