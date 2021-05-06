@@ -2,15 +2,15 @@ package com.javaprojects.DynamicProgramming;
 
 import com.javaprojects.DynamicProgramming.Controller.*;
 import com.javaprojects.DynamicProgramming.Controller.BinarySearch.TimeMap;
+import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.BuyAndSellStock;
+import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.WhereWillTheBallFall;
 import com.javaprojects.DynamicProgramming.Controller.Greedy.BinaryStringContiguosOne;
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.SeatManager;
 import com.javaprojects.DynamicProgramming.Model.ListNode;
 import com.javaprojects.DynamicProgramming.Model.TreeNode;
 import com.javaprojects.DynamicProgramming.View.GraphTraversal;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
 
 public class Main {
@@ -153,6 +153,16 @@ public class Main {
         kv.set("foo", "bar2", 4);
         System.out.println(kv.get("foo", 4)); // output "bar2"
         System.out.println(kv.get("foo", 5)); //output "bar2"
+
+        System.out.println("TESTING 121. Best Time to Buy and Sell Stock");
+        BuyAndSellStock buyAndSellStock = new BuyAndSellStock();
+        //test cases:
+        int[] prices = {7,1,5,3,6,4};
+        int[] prices_1 = {7,6,4,3,1};
+        System.out.println(Objects.toString(buyAndSellStock.maxProfit(prices)));
+        System.out.println(Objects.toString(buyAndSellStock.maxProfit(prices_1)));
+
+
         System.out.println("END OF TESTING...");
     }
 }

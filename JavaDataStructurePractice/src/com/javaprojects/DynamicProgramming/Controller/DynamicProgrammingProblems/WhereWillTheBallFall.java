@@ -1,4 +1,4 @@
-package com.javaprojects.DynamicProgramming.Controller;
+package com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems;
 
 /* 1706. Where Will the Ball Fall
 Medium
