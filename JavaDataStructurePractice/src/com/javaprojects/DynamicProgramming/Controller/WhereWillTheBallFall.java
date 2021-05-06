@@ -64,63 +64,65 @@ How do we move left or right?
 - Move right when: if the current cell == 1, then we move right down diagonally
 so basically we toggle the ball left and right based on the value in the current cell, 1 to right and -1 to left
 
-how do we catch the V? V exit when the current cell and the cell right next to it are 1 and -1 or vice versa.
-exit state: when the current iterator has made it out the boundary limit.
+dfs with dp memoization:
+create a memoization 2-d list with the same dimension as the original grid. for optimization
+create a with result 1-d list
+dfs would be used to run through the grid and check for the number in the two adjacent column cell.
+base case: if the ball is at the end of the row, then just return the column
+Logic: if the grid[row][col] == 1 and grid[row][col+1] == 1 and the column is still within the grid: then we will traverse down the grid, but the ball
+will land at location col+1 and row+1 => call dfs recursively on the next row and column, but at each dfs,
+we want to update the memo[row][col] => the dfs function return value
+
+==> dfs will return the column where the ball will fall down (0, 1,2,3,4,....) and the memo[row][col]
+
+
+Time complexity: O(mxn)
+Space complexity: O(mxn), we are storing the a memo 2-d array with the same dimension as original grid
 *  */
 public class WhereWillTheBallFall {
     public int[] findBall(int[][] grid) {
-        //extract the dimension of the grid:
-        int rows = grid.length;
-        int cols = grid[0].length;
-        //this is the return array but it is also
-        //the dp array to keep track of all sub problem solutions
-        int[] result = new int[cols];
-        int backup = 0;
+        //create variable:
+        //getting the dimension of the grid
+        int m = grid.length;
+        int n = grid[0].length;
+        int[] result = new int[n];
+        Integer[][] memo = new Integer[m][n];
+        //base case:
+        if (grid.length == 0 && grid[0].length == 0){
+            return result;
+        }
 
-        //loop through the grid to check for the movement of the balls
-        //go through each column:
-        for(int i = 0; i < cols; i++){
-            int row = 0;
-            int col = i;
-            backup = i;
-            //ensure that the iterator are traversing inside of the grid
-            while(row < rows && col < cols && row >= 0 && col >= 0){
-                //if the current cell has a 1, check to see if it has a V with the adjacent cell
-                //otherwise, move left and right diagonally based on the position of the internal board
-                if(grid[row][col] == 1){
-                    //check if there is a V
-                    if(col == col -1 || grid[row][col+1] == -1){
-                        result[i] = -1;
-                        break;
-                    }
-                    //if no V and this is a 1 board, we diagonally right by 1
-                    else{
-                        row ++;
-                        col ++;
-                    }
-                }
-                //board to go down left
-                if(grid[row][col] == -1){
-                    //check if there is a V:
-                    if(col == 0 || grid[row][col-1] == 1){
-                        result[i] = -1;
-                        break;
-                    }
-                    else{
-                        col--;
-                        row++;
-                    }
+        //traverse through the grid and use dfs to track the ball position
+        for(int i = 0; i < n; i++){
+            result[i] = dfs(grid, i, 0, memo);
+        }
 
-                }
-                //if we are able to traverse all the way out of the grid, then store the previous cell, where it was saved
-                backup = col;
-            }
-            if(result[i] == 0){
-                result[i] = backup;
-            }
+        return result;
+    }
+
+    //function to dfs through the grid
+    public int dfs(int[][] grid, int col, int row,  Integer[][] memo){
+        //base case:
+        if(row == grid.length){
+            return col;
+        }
+        if(memo[row][col] != null){
+            return memo[row][col];
+        }
+        //condition to move a ball
+        //the board spanning from top left to bottom right corner of the grid
+        if(grid[row][col] == 1 && col + 1 < grid[0].length && grid[row][col+1] == 1){
+            // then the ball will fall down to the next row in the left
+            memo[row][col] = dfs(grid, col + 1, row + 1, memo);
+        }
+        //if the board is moving from right to left, then the ball will move down to the next row and prev col - 1:
+        else if(grid[row][col] == -1 && col - 1 >= 0 && grid[row][col-1] == -1){
+            memo[row][col] = dfs(grid, col - 1, row + 1, memo);
 
         }
-        return result;
-
+        else{
+            memo[row][col] = -1;
+        }
+        return memo[row][col];
     }
 }

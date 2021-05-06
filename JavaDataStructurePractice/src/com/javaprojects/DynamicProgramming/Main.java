@@ -28,7 +28,7 @@ public class Main {
         WhereWillTheBallFall findTheBall;
         findTheBall = new WhereWillTheBallFall();
         int[][] grid = {{-1}};
-        System.out.println(findTheBall.findBall(grid));
+        System.out.println(Arrays.toString(findTheBall.findBall(grid)));
         System.out.println("END OF TESTING...");
 
         System.out.println("Creating a Binary Tree...");
