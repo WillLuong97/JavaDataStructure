@@ -6,10 +6,13 @@ import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems
 import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.WhereWillTheBallFall;
 import com.javaprojects.DynamicProgramming.Controller.Greedy.BinaryStringContiguosOne;
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.SeatManager;
+import com.javaprojects.DynamicProgramming.Controller.Tree.BinaryTreeMinDepth;
 import com.javaprojects.DynamicProgramming.Model.ListNode;
 import com.javaprojects.DynamicProgramming.Model.TreeNode;
 import com.javaprojects.DynamicProgramming.View.GraphTraversal;
+import com.sun.source.tree.Tree;
 
+import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -162,8 +165,21 @@ public class Main {
         System.out.println(Objects.toString(buyAndSellStock.maxProfit(prices)));
         System.out.println(Objects.toString(buyAndSellStock.maxProfit(prices_1)));
 
+        System.out.println("TESTING 111. Minimum Depth of Binary Tree");
+        BinaryTreeMinDepth binaryTreeMinDepth = new BinaryTreeMinDepth();
+        //test cases:
+        //root = [3,9,20,null,null,15,7]
+        TreeNode tRoot = new TreeNode(3);
+        TreeNode nine = new TreeNode(9);
+        TreeNode twenty = new TreeNode(20);
+        TreeNode fifteen = new TreeNode(15);
+        TreeNode seven = new TreeNode(7);
+        tRoot.setLeft(nine);
+        tRoot.setRight(twenty);
+        twenty.setLeft(fifteen);
+        twenty.setRight(seven);
+        System.out.println(Objects.toString(binaryTreeMinDepth.minDepth(tRoot)));
 
         System.out.println("END OF TESTING...");
     }
-}
-
+} 
