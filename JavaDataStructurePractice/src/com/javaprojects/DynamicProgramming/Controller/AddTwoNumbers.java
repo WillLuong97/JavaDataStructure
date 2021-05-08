@@ -32,46 +32,43 @@ Space complexity: O(max(m,n)), we are storing the length of the list 1 and list 
 
 public class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        //Init the two string that would store the integer value of list 1 and list 2
-        StringBuilder num_1_str = new StringBuilder();
-        StringBuilder num_2_str = new StringBuilder();
-
-        //traverse list 1 and append its value to the string 1
-        while (l1 != null){
-            num_1_str.append(l1.getVal());
-            l1 = l1.getNext();
+        //base case:
+        if(l1 == null && l2 == null){
+            return null;
         }
-        //traverse list 2 and append its value to string 2:
-        while(l2 != null){
-            num_2_str.append(l2.getVal());
-            l2 = l2.getNext();
-        }
-        //reverse each string and then convert them into an int
-        int num_1 = Integer.parseInt(String.valueOf(num_1_str.reverse()));
-        int num_2 = Integer.parseInt(String.valueOf(num_2_str.reverse()));
 
-        //add the two number together
-        int result = num_1 + num_2;
+        //create a dummy node to keep track of the result
+        ListNode dummyHead = new ListNode(0);
+        //pointers to point at the two linekd list and the result linked list
+        ListNode p1 = l1;
+        ListNode p2 = l2;
+        ListNode curr = dummyHead;
+        //carry variable to keep track of the carried over
+        int carry = 0;
+        int sum;
 
-        //convert the result into a string to reverse it
-        StringBuilder result_str = new StringBuilder(String.valueOf(result));
-        StringBuilder result_str_rev = result_str.reverse();
+        //traverse through the two linked list
+        while(p1 != null || p2 != null){
+            int x = (p1 != null) ? p1.getVal() : 0;
+            int y = (p2 != null) ? p2.getVal() : 0;
 
-        //we will create a new linked list with the updated result
-        ListNode newHead = null;
-        ListNode current = null;
-        for(int i = 0; i < result_str_rev.length(); i++){
-            //if the head is empty so we will add the first element of the resut string into the head of the new linked list
-            if(newHead == null){
-                newHead = new ListNode(Integer.parseInt(String.valueOf(result_str_rev.charAt(0))));
-                current = newHead;
+            sum = carry + x + y;
+            carry = (sum / 10);
+//            ListNode newHead = new ListNode(sum %10)
+            curr.setNext(new ListNode(sum %10));
+            curr = curr.getNext();
+
+            if(p1 != null){
+                p1 = p1.getNext();
             }
-            else{
-                current.setNext(new ListNode(Integer.parseInt(String.valueOf(result_str_rev.charAt(i)))));
-                current = current.getNext();
+
+            if(p2 != null){
+                p2 = p2.getNext();
             }
         }
-        return newHead;
-
+        if (carry > 0){
+            curr.setNext(new ListNode(carry));
+        }
+        return dummyHead.getNext();
     }
 }

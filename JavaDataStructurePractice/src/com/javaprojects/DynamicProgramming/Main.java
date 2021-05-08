@@ -96,7 +96,7 @@ public class Main {
         l2.setNext(l2_1);
         l2_1.setNext(l2_2);
         AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
-        System.out.println(addTwoNumbers.addTwoNumbers(l1, l2));
+        System.out.println(Objects.toString(addTwoNumbers.addTwoNumbers(l1, l2)));
 
         System.out.println("Depth First Search Traversal!");
         //creating a graph
