@@ -1,9 +1,11 @@
 package com.javaprojects.DynamicProgramming;
 
+import com.javaprojects.DynamicProgramming.BackTracking.RestoreIPAddresses;
 import com.javaprojects.DynamicProgramming.Controller.*;
 import com.javaprojects.DynamicProgramming.Controller.BinarySearch.TimeMap;
 import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.BuyAndSellStock;
 import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.WhereWillTheBallFall;
+import com.javaprojects.DynamicProgramming.Controller.Graph.NetworkDelayTime;
 import com.javaprojects.DynamicProgramming.Controller.Greedy.BinaryStringContiguosOne;
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.SeatManager;
 import com.javaprojects.DynamicProgramming.Controller.Tree.BinaryTreeMinDepth;
@@ -180,6 +182,26 @@ public class Main {
         twenty.setRight(seven);
         System.out.println(Objects.toString(binaryTreeMinDepth.minDepth(tRoot)));
 
+        System.out.println("TESTING 743. Network Delay Time...");
+        //Test case:
+        int[][] times = {{2,1,1}, {2,3,1}, {3,4,1}};
+        NetworkDelayTime networkDelayTime = new NetworkDelayTime();
+
+        //System.out.println(Objects.toString(networkDelayTime.networkDelayTime(times, 4, 2)));
+
+        System.out.println("TESTING 93. Restore IP Addresses...");
+        String ip_1 = "25525511135";
+        String ip_2 = "0000";
+        String ip_3 = "1111";
+        String ip_4 = "010010";
+        String ip_5 = "101023";
+        RestoreIPAddresses restoreIPAddresses = new RestoreIPAddresses();
+        System.out.println(Objects.toString(restoreIPAddresses.restoreIpAddresses(ip_1)));
+        System.out.println(Objects.toString(restoreIPAddresses.restoreIpAddresses(ip_2)));
+        System.out.println(Objects.toString(restoreIPAddresses.restoreIpAddresses(ip_3)));
+        System.out.println(Objects.toString(restoreIPAddresses.restoreIpAddresses(ip_4)));
+        System.out.println(Objects.toString(restoreIPAddresses.restoreIpAddresses(ip_5)));
         System.out.println("END OF TESTING...");
+
     }
 }
