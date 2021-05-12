@@ -187,7 +187,7 @@ public class Main {
         int[][] times = {{2,1,1}, {2,3,1}, {3,4,1}};
         NetworkDelayTime networkDelayTime = new NetworkDelayTime();
 
-        //System.out.println(Objects.toString(networkDelayTime.networkDelayTime(times, 4, 2)));
+        System.out.println(Objects.toString(networkDelayTime.networkDelayTime(times, 4, 2)));
 
         System.out.println("TESTING 93. Restore IP Addresses...");
         String ip_1 = "25525511135";
