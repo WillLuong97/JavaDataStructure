@@ -10,6 +10,7 @@ import com.javaprojects.DynamicProgramming.Controller.Graph.NetworkDelayTime;
 import com.javaprojects.DynamicProgramming.Controller.Greedy.BinaryStringContiguosOne;
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.SeatManager;
 import com.javaprojects.DynamicProgramming.Controller.Tree.BinaryTreeMinDepth;
+import com.javaprojects.DynamicProgramming.Controller.Tree.MaximumLevelSumOfATree;
 import com.javaprojects.DynamicProgramming.Model.ListNode;
 import com.javaprojects.DynamicProgramming.Model.TreeNode;
 import com.javaprojects.DynamicProgramming.View.GraphTraversal;
@@ -214,6 +215,11 @@ public class Main {
         System.out.println(longestValidParenthese.longestValidParentheses(valid_s));
         System.out.println(longestValidParenthese.longestValidParentheses(valid_s_1));
         System.out.println(longestValidParenthese.longestValidParentheses(valid_s_2));
+
+
+        System.out.println("TESTING MAXIMUM LEVEL SUM OF A TREE...");
+        MaximumLevelSumOfATree maximumLevelSumOfATree = new MaximumLevelSumOfATree();
+
 
         System.out.println("END OF TESTING...");
 
