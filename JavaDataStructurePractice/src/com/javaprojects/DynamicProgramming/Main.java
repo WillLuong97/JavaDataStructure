@@ -4,6 +4,7 @@ import com.javaprojects.DynamicProgramming.BackTracking.RestoreIPAddresses;
 import com.javaprojects.DynamicProgramming.Controller.*;
 import com.javaprojects.DynamicProgramming.Controller.BinarySearch.TimeMap;
 import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.BuyAndSellStock;
+import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.LongestValidParenthese;
 import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.WhereWillTheBallFall;
 import com.javaprojects.DynamicProgramming.Controller.Graph.NetworkDelayTime;
 import com.javaprojects.DynamicProgramming.Controller.Greedy.BinaryStringContiguosOne;
@@ -201,6 +202,19 @@ public class Main {
         System.out.println(Objects.toString(restoreIPAddresses.restoreIpAddresses(ip_3)));
         System.out.println(Objects.toString(restoreIPAddresses.restoreIpAddresses(ip_4)));
         System.out.println(Objects.toString(restoreIPAddresses.restoreIpAddresses(ip_5)));
+
+
+        System.out.println("TESTING 32. Longest Valid Parentheses...");
+        //TEST CASES:
+        String valid_s = "(()";
+        String valid_s_1 = ")()())";
+        String valid_s_2 = "";
+
+        LongestValidParenthese longestValidParenthese = new LongestValidParenthese();
+        System.out.println(longestValidParenthese.longestValidParentheses(valid_s));
+        System.out.println(longestValidParenthese.longestValidParentheses(valid_s_1));
+        System.out.println(longestValidParenthese.longestValidParentheses(valid_s_2));
+
         System.out.println("END OF TESTING...");
 
     }
