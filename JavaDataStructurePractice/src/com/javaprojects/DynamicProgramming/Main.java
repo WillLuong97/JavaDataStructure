@@ -217,9 +217,19 @@ public class Main {
         System.out.println(longestValidParenthese.longestValidParentheses(valid_s_2));
 
 
-        System.out.println("TESTING MAXIMUM LEVEL SUM OF A TREE...");
-        MaximumLevelSumOfATree maximumLevelSumOfATree = new MaximumLevelSumOfATree();
-
+        //System.out.println("TESTING MAXIMUM LEVEL SUM OF A TREE...");
+        //MaximumLevelSumOfATree maximumLevelSumOfATree = new MaximumLevelSumOfATree();
+        System.out.println("TESTING 234. Palindrome Linked List...");
+        PalindromeLinkedList palindromeLinkedList = new PalindromeLinkedList();
+        //Create a linked list:
+        ListNode pal = new ListNode(1);
+        ListNode pal_1 = new ListNode(2);
+        ListNode pal_2 = new ListNode(2);
+        ListNode pal_3 = new ListNode(1);
+        pal.setNext(pal_1);
+        pal_1.setNext(pal_2);
+        pal_2.setNext(pal_3);
+        System.out.println(palindromeLinkedList.isPalindrome(pal));
 
         System.out.println("END OF TESTING...");
 
