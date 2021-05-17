@@ -231,6 +231,11 @@ public class Main {
         pal_2.setNext(pal_3);
         System.out.println(palindromeLinkedList.isPalindrome(pal));
 
+        System.out.println("TESTING FIND SMALLEST AND SECOND SMALLEST ELEMENT IN AN INTEGER ARRAY!");
+        int[] test_1 = {12, 13, 1, 10, 3, 0};
+        FindSmallestInArray findSmallestInArray = new FindSmallestInArray();
+        System.out.println(findSmallestInArray.findFirstSmallest(test_1));
+        System.out.println(findSmallestInArray.findSecondSmallest(test_1));
         System.out.println("END OF TESTING...");
 
     }
