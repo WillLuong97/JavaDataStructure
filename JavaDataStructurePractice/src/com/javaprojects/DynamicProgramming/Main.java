@@ -236,6 +236,24 @@ public class Main {
         FindSmallestInArray findSmallestInArray = new FindSmallestInArray();
         System.out.println(findSmallestInArray.findFirstSmallest(test_1));
         System.out.println(findSmallestInArray.findSecondSmallest(test_1));
+
+
+        System.out.println("TESTING 151. Reverse Words in a String");
+        //test case:
+        String test_str = "the sky is blue";
+        String test_str_1 = "  hello world  ";
+        String test_str_2 = "a good   example";
+        String test_str_3 = "  Bob    Loves  Alice   ";
+        String test_str_4 = "Alice does not even like bob";
+        ReverseWordInAString reverseWordInAString = new ReverseWordInAString();
+        System.out.println(reverseWordInAString.reverseWords(test_str));
+        System.out.println(reverseWordInAString.reverseWords(test_str_1));
+        System.out.println(reverseWordInAString.reverseWords(test_str_2));
+        System.out.println(reverseWordInAString.reverseWords(test_str_3));
+        System.out.println(reverseWordInAString.reverseWords(test_str_4));
+
+
+
         System.out.println("END OF TESTING...");
 
     }
