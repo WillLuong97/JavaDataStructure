@@ -6,11 +6,13 @@ import com.javaprojects.DynamicProgramming.Controller.BinarySearch.TimeMap;
 import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.BuyAndSellStock;
 import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.LongestValidParenthese;
 import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.WhereWillTheBallFall;
+import com.javaprojects.DynamicProgramming.Controller.Graph.CloneGraph;
 import com.javaprojects.DynamicProgramming.Controller.Graph.NetworkDelayTime;
 import com.javaprojects.DynamicProgramming.Controller.Greedy.BinaryStringContiguosOne;
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.SeatManager;
 import com.javaprojects.DynamicProgramming.Controller.Tree.BinaryTreeMinDepth;
 import com.javaprojects.DynamicProgramming.Controller.Tree.MaximumLevelSumOfATree;
+import com.javaprojects.DynamicProgramming.Model.GraphNode;
 import com.javaprojects.DynamicProgramming.Model.ListNode;
 import com.javaprojects.DynamicProgramming.Model.TreeNode;
 import com.javaprojects.DynamicProgramming.View.GraphTraversal;
@@ -253,6 +255,23 @@ public class Main {
         System.out.println(reverseWordInAString.reverseWords(test_str_4));
 
 
+        System.out.println("TESTING 133. Clone Graph...");
+        //Test case:
+        GraphNode node_1 = new GraphNode(1);
+        GraphNode node_2 = new GraphNode(2);
+        GraphNode node_3 = new GraphNode(3);
+        GraphNode node_4 = new GraphNode(4);
+
+        node_1.neighbors.add(node_2);
+        node_1.neighbors.add(node_4);
+        node_2.neighbors.add(node_1);
+        node_2.neighbors.add(node_3);
+        node_3.neighbors.add(node_2);
+        node_3.neighbors.add(node_4);
+        node_4.neighbors.add(node_1);
+        node_4.neighbors.add(node_3);
+        CloneGraph cloneGraph = new CloneGraph();
+        System.out.println(cloneGraph.cloneGraph(node_1));
 
         System.out.println("END OF TESTING...");
 
