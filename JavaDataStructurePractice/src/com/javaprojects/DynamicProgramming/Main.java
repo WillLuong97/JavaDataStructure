@@ -273,6 +273,14 @@ public class Main {
         CloneGraph cloneGraph = new CloneGraph();
         System.out.println(cloneGraph.cloneGraph(node_1));
 
+        System.out.println("TESTING 357. Count Numbers with Unique Digits...");
+        //test case:
+        int n_unique_1 = 2;
+        int n_unique_2 = 0;
+        CountNumberWithUniqueDigits countNumberWithUniqueDigits = new CountNumberWithUniqueDigits();
+        System.out.println(countNumberWithUniqueDigits.countNumbersWithUniqueDigits(n_unique_1));
+        System.out.println(countNumberWithUniqueDigits.countNumbersWithUniqueDigits(n_unique_2));
+
         System.out.println("END OF TESTING...");
 
     }

@@ -47,9 +47,7 @@ Example 4:
 
 
 Input: adjList = [[2],[1]]
-Output: [[2],[1]]
-
-
+Output: [[2],[1];
 Constraints:
 
 The number of nodes in the graph is in the range [0, 100].
@@ -57,9 +55,6 @@ The number of nodes in the graph is in the range [0, 100].
 Node.val is unique for each node.
 There are no repeated edges and no self-loops in the graph.
 The Graph is connected and all nodes can be visited starting from the given node.
-
-
-
 Approach:
 We will use DFS to solve this problem. We will create a hashmap that can  store the value of the node as the key (for easier querying
 of the data) and the copy of the node as the value.
