@@ -7,6 +7,7 @@ import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems
 import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.LongestValidParenthese;
 import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.WhereWillTheBallFall;
 import com.javaprojects.DynamicProgramming.Controller.Graph.CloneGraph;
+import com.javaprojects.DynamicProgramming.Controller.Graph.GameOfLife;
 import com.javaprojects.DynamicProgramming.Controller.Graph.NetworkDelayTime;
 import com.javaprojects.DynamicProgramming.Controller.Greedy.BinaryStringContiguosOne;
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.SeatManager;
@@ -280,8 +281,13 @@ public class Main {
         CountNumberWithUniqueDigits countNumberWithUniqueDigits = new CountNumberWithUniqueDigits();
         System.out.println(countNumberWithUniqueDigits.countNumbersWithUniqueDigits(n_unique_1));
         System.out.println(countNumberWithUniqueDigits.countNumbersWithUniqueDigits(n_unique_2));
-
+        int[][] board = new int[][]{{0,1,0},{0,0,1},{1,1,1},{0,0,0}};
+        int[][] board_2 = new int[][]{{1,1},{1,0}};
+        GameOfLife gameOfLife = new GameOfLife();
+        gameOfLife.gameOfLife(board);
+        System.out.println(board);
+        gameOfLife.gameOfLife(board_2);
+        System.out.println(board_2);
         System.out.println("END OF TESTING...");
-
     }
 }
