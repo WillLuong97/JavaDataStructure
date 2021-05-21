@@ -4,6 +4,7 @@ import com.javaprojects.DynamicProgramming.BackTracking.RestoreIPAddresses;
 import com.javaprojects.DynamicProgramming.Controller.*;
 import com.javaprojects.DynamicProgramming.Controller.BinarySearch.TimeMap;
 import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.BuyAndSellStock;
+import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.CountSortedVowelString;
 import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.LongestValidParenthese;
 import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.WhereWillTheBallFall;
 import com.javaprojects.DynamicProgramming.Controller.Graph.CloneGraph;
@@ -284,10 +285,21 @@ public class Main {
         int[][] board = new int[][]{{0,1,0},{0,0,1},{1,1,1},{0,0,0}};
         int[][] board_2 = new int[][]{{1,1},{1,0}};
         GameOfLife gameOfLife = new GameOfLife();
-        gameOfLife.gameOfLife(board);
-        System.out.println(board);
-        gameOfLife.gameOfLife(board_2);
-        System.out.println(board_2);
+        //gameOfLife.gameOfLife(board);
+        //System.out.println(board);
+        //gameOfLife.gameOfLife(board_2);
+        //System.out.println(board_2);
+
+        System.out.println("TESTING 1641. Count Sorted Vowel Strings...");
+        //test case:
+        CountSortedVowelString countSortedVowelString = new CountSortedVowelString();
+        System.out.println(countSortedVowelString.countVowelStrings(1));
+        System.out.println(countSortedVowelString.countVowelStrings(2));
+        System.out.println(countSortedVowelString.countVowelStrings(33));
+        System.out.println("");
+        System.out.println(countSortedVowelString.countVowelStrings_MEMOIZATION(1));
+        System.out.println(countSortedVowelString.countVowelStrings_MEMOIZATION(2));
+        System.out.println(countSortedVowelString.countVowelStrings_MEMOIZATION(33));
         System.out.println("END OF TESTING...");
     }
 }
