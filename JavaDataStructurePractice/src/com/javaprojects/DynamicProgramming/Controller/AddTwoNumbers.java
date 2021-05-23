@@ -37,38 +37,37 @@ public class AddTwoNumbers {
             return null;
         }
 
-        //create a dummy node to keep track of the result
-        ListNode dummyHead = new ListNode(0);
-        //pointers to point at the two linekd list and the result linked list
-        ListNode p1 = l1;
-        ListNode p2 = l2;
-        ListNode curr = dummyHead;
-        //carry variable to keep track of the carried over
+        //setting up pointer to point at both tree
+        ListNode p = l1;
+        ListNode q = l2;
+        //dummy node to keep track of the result tree
+        ListNode dummyNode = new ListNode(0);
+        ListNode curr = dummyNode;
+        //variable to keep track of the carray over number
         int carry = 0;
-        int sum;
-
-        //traverse through the two linked list
-        while(p1 != null || p2 != null){
-            int x = (p1 != null) ? p1.getVal() : 0;
-            int y = (p2 != null) ? p2.getVal() : 0;
-
-            sum = carry + x + y;
-            carry = (sum / 10);
-//            ListNode newHead = new ListNode(sum %10)
-            curr.setNext(new ListNode(sum %10));
+        //traverse both tree
+        while(p != null || q != null){
+            //getting the x and y value to add for the sum
+            int x = (p != null) ? p.getVal() : 0;
+            int y = (q != null) ? q.getVal() : 0;
+            int sum = x + y + carry;
+            carry = sum / 10; //the carried over from the addition
+            //setting the new tree to have the value of the value
+            curr.setNext(new ListNode(sum % 10));
             curr = curr.getNext();
-
-            if(p1 != null){
-                p1 = p1.getNext();
+            //getting the next value in the linked list
+            if(p != null){
+                p = p.getNext();
             }
-
-            if(p2 != null){
-                p2 = p2.getNext();
+            if(q != null){
+                q = q.getNext();
             }
         }
-        if (carry > 0){
+        //if at the end of the tree, we still have the values left in the carried over, then assign it to a new node
+        if(carry > 0){
             curr.setNext(new ListNode(carry));
         }
-        return dummyHead.getNext();
+
+        return dummyNode.getNext();
     }
 }
