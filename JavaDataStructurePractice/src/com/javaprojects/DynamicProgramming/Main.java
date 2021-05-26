@@ -10,8 +10,10 @@ import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems
 import com.javaprojects.DynamicProgramming.Controller.Graph.CloneGraph;
 import com.javaprojects.DynamicProgramming.Controller.Graph.GameOfLife;
 import com.javaprojects.DynamicProgramming.Controller.Graph.NetworkDelayTime;
+import com.javaprojects.DynamicProgramming.Controller.Graph.ProductGrouping;
 import com.javaprojects.DynamicProgramming.Controller.Greedy.BinaryStringContiguosOne;
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.SeatManager;
+import com.javaprojects.DynamicProgramming.Controller.HeapProblem.TaskOrder;
 import com.javaprojects.DynamicProgramming.Controller.Tree.BinaryTreeMinDepth;
 import com.javaprojects.DynamicProgramming.Controller.Tree.MaximumLevelSumOfATree;
 import com.javaprojects.DynamicProgramming.Model.GraphNode;
@@ -21,7 +23,9 @@ import com.javaprojects.DynamicProgramming.View.GraphTraversal;
 import com.sun.source.tree.Tree;
 
 import java.sql.SQLOutput;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public class Main {
@@ -106,11 +110,12 @@ public class Main {
         AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
         System.out.println(Objects.toString(addTwoNumbers.addTwoNumbers(l1, l2)));
 
-        System.out.println("Depth First Search Traversal!");
-        //creating a graph
-        String[][] matrix = {{"A", "B", "C"}, {"D", "E", "F"}, {"G", "H", "I"}};
-        GraphTraversal graphTraversal = new GraphTraversal();
-        graphTraversal.DFS(matrix);
+//        System.out.println("Depth First Search Traversal!");
+//        creating a graph
+//        String[][] matrix = {{"A", "B", "C"}, {"D", "E", "F"}, {"G", "H", "I"}};
+//        GraphTraversal graphTraversal = new GraphTraversal();
+//        graphTraversal.DFS(matrix);
+
         System.out.println("TESTING 733. Flood Fill");
         //Test case:
         int[][] image = {{1,1,1}, {1,1,0}, {1,0,1}};
@@ -300,6 +305,21 @@ public class Main {
         System.out.println(countSortedVowelString.countVowelStrings_MEMOIZATION(1));
         System.out.println(countSortedVowelString.countVowelStrings_MEMOIZATION(2));
         System.out.println(countSortedVowelString.countVowelStrings_MEMOIZATION(33));
+
+        System.out.println("TESTING PRODUCT ID GROUPING...");
+        List<List<Integer>> test_input_1 = Arrays.asList(Arrays.asList(1,2), Arrays.asList(2,5), Arrays.asList(3,4), Arrays.asList(4,6), Arrays.asList(6,8), Arrays.asList(5,7), Arrays.asList(5,2), Arrays.asList(5,2));
+        ProductGrouping productGrouping = new ProductGrouping();
+        System.out.println(productGrouping.productGroups(test_input_1));
+
+        System.out.println("TESTING 1834. Single-Threaded CPU...");
+        //test case:
+        //tasks = [[1,2],[2,4],[3,2],[4,1]]
+        //tasks = [[7,10],[7,12],[7,5],[7,4],[7,2]]
+        int[][] tasks_1 = new int[][]{{1,2}, {2,4}, {3,2}, {3,1}};
+        int[][] tasks_2 = new int[][]{{7,10}, {7,12}, {7,5}, {7,4}, {7,2}};
+        TaskOrder taskOrder = new TaskOrder();
+        System.out.println(taskOrder.getOrder(tasks_1));
+        System.out.println(taskOrder.getOrder(tasks_2));
         System.out.println("END OF TESTING...");
     }
 }

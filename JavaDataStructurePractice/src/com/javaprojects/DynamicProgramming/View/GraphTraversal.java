@@ -77,39 +77,39 @@ public class GraphTraversal {
     keep repeating step 2 and 3 until the queue is empty
     * */
     //Function to traverse a graph using BFS:
-    public void BFS(int node){
-        LinkedList<Integer> queue = new LinkedList<>();
-        //boolean array to keep track of the visited node:
-        boolean[] visited = new boolean[4];
-        visited[node] = true;
-        queue.add(node);
-        while(!queue.isEmpty()){
-            node = queue.poll();
-            System.out.println(node + " ");
-            //looping through the neigbor node of the current node using
-            for(int i: adjLst[node]){
-                if(!visited[node]){
-                    visited[i] = true;
-                    queue.add(i);
-                }
-            }
-        }
-    }
-
-    //function traverse through a graph using dfs
-    public void dfs(int node){
-        //boolean array to keep track of the visited node
-        boolean[] visited = new boolean[4];
-        System.out.println(node + " ");
-        for(int neighbor : adLst[node]){
-            //if the neighbor node has not been visited so we will add it into the
-            if (!visited[neighbor]){
-                visited[neighbor] = true;
-                dfs(neighbor);
-            }
-        }
-
-
-    }
+//    public void BFS(int node){
+//        LinkedList<Integer> queue = new LinkedList<>();
+//        //boolean array to keep track of the visited node:
+//        boolean[] visited = new boolean[4];
+//        visited[node] = true;
+//        queue.add(node);
+//        while(!queue.isEmpty()){
+//            node = queue.poll();
+//            System.out.println(node + " ");
+//            //looping through the neigbor node of the current node using
+//            for(int i: adjLst[node]){
+//                if(!visited[node]){
+//                    visited[i] = true;
+//                    queue.add(i);
+//                }
+//            }
+//        }
+//    }
+//
+//    //function traverse through a graph using dfs
+//    public void dfs(int node){
+//        //boolean array to keep track of the visited node
+//        boolean[] visited = new boolean[4];
+//        System.out.println(node + " ");
+//        for(int neighbor : adLst[node]){
+//            //if the neighbor node has not been visited so we will add it into the
+//            if (!visited[neighbor]){
+//                visited[neighbor] = true;
+//                dfs(neighbor);
+//            }
+//        }
+//
+//
+//    }
 
 }
