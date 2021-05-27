@@ -3,10 +3,7 @@ package com.javaprojects.DynamicProgramming;
 import com.javaprojects.DynamicProgramming.BackTracking.RestoreIPAddresses;
 import com.javaprojects.DynamicProgramming.Controller.*;
 import com.javaprojects.DynamicProgramming.Controller.BinarySearch.TimeMap;
-import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.BuyAndSellStock;
-import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.CountSortedVowelString;
-import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.LongestValidParenthese;
-import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.WhereWillTheBallFall;
+import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.*;
 import com.javaprojects.DynamicProgramming.Controller.Graph.CloneGraph;
 import com.javaprojects.DynamicProgramming.Controller.Graph.GameOfLife;
 import com.javaprojects.DynamicProgramming.Controller.Graph.NetworkDelayTime;
@@ -320,6 +317,20 @@ public class Main {
         TaskOrder taskOrder = new TaskOrder();
         System.out.println(taskOrder.getOrder(tasks_1));
         System.out.println(taskOrder.getOrder(tasks_2));
+
+        System.out.println("TESTING COUNT SUBMATRICES WITH ALL ONES...");
+        //TEST Case:
+        int[][] mat_1 = new int[][] {{1,0,1}, {1,1,0}, {1,1,0}};
+        int[][] mat_2 = new int[][]{{0,1,1,0}, {0,1,1,1}, {1,1,1,0}};
+        int[][] mat_3 = new int[][]{{1,1,1,1,1,1}};
+        int[][] mat_4 = new int[][]{{1,0,1}, {0,1,0}, {1,0,1}};
+
+        CountSubMatricesWithAllOnes countSubMatricesWithAllOnes = new CountSubMatricesWithAllOnes();
+        System.out.println(countSubMatricesWithAllOnes.numSubmat(mat_1));
+        System.out.println(countSubMatricesWithAllOnes.numSubmat(mat_2));
+        System.out.println(countSubMatricesWithAllOnes.numSubmat(mat_3));
+        System.out.println(countSubMatricesWithAllOnes.numSubmat(mat_4));
+
         System.out.println("END OF TESTING...");
     }
 }
