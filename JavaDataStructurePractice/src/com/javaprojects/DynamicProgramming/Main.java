@@ -331,6 +331,15 @@ public class Main {
         System.out.println(countSubMatricesWithAllOnes.numSubmat(mat_3));
         System.out.println(countSubMatricesWithAllOnes.numSubmat(mat_4));
 
+        System.out.println("TESTING 204. Count Primes...");
+        //test cases:
+        int limit_1 = 10;
+        int limit_2 = 0;
+        int limit_3 = 1;
+        CountPrime countPrime = new CountPrime();
+        System.out.println(countPrime.countPrimes(limit_1));
+        System.out.println(countPrime.countPrimes(limit_2));
+        System.out.println(countPrime.countPrimes(limit_3));
         System.out.println("END OF TESTING...");
     }
 }
