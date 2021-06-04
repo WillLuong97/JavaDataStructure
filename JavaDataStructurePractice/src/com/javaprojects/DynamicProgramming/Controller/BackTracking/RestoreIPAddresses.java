@@ -1,4 +1,4 @@
-package com.javaprojects.DynamicProgramming.BackTracking;
+package com.javaprojects.DynamicProgramming.Controller.BackTracking;
 
 import java.util.ArrayList;
 import java.util.List;

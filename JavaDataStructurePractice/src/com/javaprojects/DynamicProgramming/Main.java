@@ -1,6 +1,6 @@
 package com.javaprojects.DynamicProgramming;
 
-import com.javaprojects.DynamicProgramming.BackTracking.RestoreIPAddresses;
+import com.javaprojects.DynamicProgramming.Controller.BackTracking.RestoreIPAddresses;
 import com.javaprojects.DynamicProgramming.Controller.*;
 import com.javaprojects.DynamicProgramming.Controller.BinarySearch.TimeMap;
 import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.*;
@@ -12,15 +12,10 @@ import com.javaprojects.DynamicProgramming.Controller.Greedy.BinaryStringContigu
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.SeatManager;
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.TaskOrder;
 import com.javaprojects.DynamicProgramming.Controller.Tree.BinaryTreeMinDepth;
-import com.javaprojects.DynamicProgramming.Controller.Tree.MaximumLevelSumOfATree;
 import com.javaprojects.DynamicProgramming.Model.GraphNode;
 import com.javaprojects.DynamicProgramming.Model.ListNode;
 import com.javaprojects.DynamicProgramming.Model.TreeNode;
-import com.javaprojects.DynamicProgramming.View.GraphTraversal;
-import com.sun.source.tree.Tree;
 
-import java.sql.SQLOutput;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -340,6 +335,29 @@ public class Main {
         System.out.println(countPrime.countPrimes(limit_1));
         System.out.println(countPrime.countPrimes(limit_2));
         System.out.println(countPrime.countPrimes(limit_3));
+
+        System.out.println("TESTING 322. Coin Change");
+        int[] coins = new int[]{1,2,5};
+        int amount = 11;
+
+        int[] coins_2 = new int[]{2};
+        int amount_2 = 3;
+
+        int[] coins_3 = new int[]{1};
+        int amount_3 = 1;
+
+        int[] coins_4 = new int[]{1};
+        int amount_4 = 2;
+
+        CoinChange coinChange = new CoinChange();
+        System.out.println(coinChange.coinChange(coins, amount));
+        System.out.println(coinChange.coinChange(coins_2, amount_2));
+        System.out.println(coinChange.coinChange(coins_3, amount_3));
+        System.out.println(coinChange.coinChange(coins_4, amount_4));
+
+
+
+
         System.out.println("END OF TESTING...");
     }
 }
