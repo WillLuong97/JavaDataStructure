@@ -12,6 +12,7 @@ import com.javaprojects.DynamicProgramming.Controller.Greedy.BinaryStringContigu
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.SeatManager;
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.TaskOrder;
 import com.javaprojects.DynamicProgramming.Controller.Tree.BinaryTreeMinDepth;
+import com.javaprojects.DynamicProgramming.Controller.Tree.InorderSuccessor;
 import com.javaprojects.DynamicProgramming.Model.GraphNode;
 import com.javaprojects.DynamicProgramming.Model.ListNode;
 import com.javaprojects.DynamicProgramming.Model.TreeNode;
@@ -39,46 +40,46 @@ public class Main {
         System.out.println("END OF TESTING...");
 
         System.out.println("Creating a Binary Tree...");
-        //Creating a binary tree:
-        TreeNode root1;
-        TreeNode root2;
-        TreeNode child_1_1;
-        TreeNode child_1_2;
-        TreeNode child_1_3;
-
-        TreeNode child_2_1;
-        TreeNode child_2_2;
-        TreeNode child_2_3;
-        TreeNode child_2_4;
-
-        root1 = new TreeNode(1);
-        root2 = new TreeNode(2);
-
-        child_1_1 = new TreeNode(3);
-        child_1_2 = new TreeNode(2);
-        child_1_3 = new TreeNode(5);
-
-        child_2_1 = new TreeNode(1);
-        child_2_2 = new TreeNode(3);
-        child_2_3 = new TreeNode(4);
-        child_2_4 = new TreeNode(7);
+//        //Creating a binary tree:
+//        TreeNode root1;
+//        TreeNode root2;
+//        TreeNode child_1_1;
+//        TreeNode child_1_2;
+//        TreeNode child_1_3;
+//
+//        TreeNode child_2_1;
+//        TreeNode child_2_2;
+//        TreeNode child_2_3;
+//        TreeNode child_2_4;
+//
+//        root1 = new TreeNode(1);
+//        root2 = new TreeNode(2);
+//
+//        child_1_1 = new TreeNode(3);
+//        child_1_2 = new TreeNode(2);
+//        child_1_3 = new TreeNode(5);
+//
+//        child_2_1 = new TreeNode(1);
+//        child_2_2 = new TreeNode(3);
+//        child_2_3 = new TreeNode(4);
+//        child_2_4 = new TreeNode(7);
         //the first tree
-        root1.setLeft(child_1_1);
-        root1.setRight(child_1_2);
-        child_1_1.setLeft(child_1_3);
-        //the second tree:
-        root2.setLeft(child_2_1);
-        root2.setRight(child_2_2);
-        child_2_1.setRight(child_2_3);
-        child_2_2.setRight(child_2_4);
+//        root1.setLe(child_1_1);
+//        root1.setRight(child_1_2);
+//        child_1_1.setLeft(child_1_3);
+//        //the second tree:
+//        root2.setLeft(child_2_1);
+//        root2.setRight(child_2_2);
+//        child_2_1.setRight(child_2_3);
+//        child_2_2.setRight(child_2_4);
 
-        System.out.println("TESTING  Merge Two Binary Trees...");
-        MergeBinaryTree mergeBinaryTree = new MergeBinaryTree();
-        System.out.println(mergeBinaryTree.mergeTrees(root1, root2));
-        System.out.println("TESTING MERGE TWO BINARY TREES ITERATIVE...");
-        MergeBinaryTree mergeBinaryTreeIterative = new MergeBinaryTree();
-        System.out.println(mergeBinaryTreeIterative.mergeTrees_ITERATIVE(root1, root2));
-
+//        System.out.println("TESTING  Merge Two Binary Trees...");
+//        MergeBinaryTree mergeBinaryTree = new MergeBinaryTree();
+//        System.out.println(mergeBinaryTree.mergeTrees(root1, root2));
+//        System.out.println("TESTING MERGE TWO BINARY TREES ITERATIVE...");
+//        MergeBinaryTree mergeBinaryTreeIterative = new MergeBinaryTree();
+//        System.out.println(mergeBinaryTreeIterative.mergeTrees_ITERATIVE(root1, root2));
+//
         System.out.println("TESTING 1290. Convert Binary Number in a Linked List to Integer... ");
         ListNode head = new ListNode(1);
         ListNode head1 = new ListNode(0);
@@ -170,20 +171,20 @@ public class Main {
         System.out.println(Objects.toString(buyAndSellStock.maxProfit(prices)));
         System.out.println(Objects.toString(buyAndSellStock.maxProfit(prices_1)));
 
-        System.out.println("TESTING 111. Minimum Depth of Binary Tree");
-        BinaryTreeMinDepth binaryTreeMinDepth = new BinaryTreeMinDepth();
-        //test cases:
-        //root = [3,9,20,null,null,15,7]
-        TreeNode tRoot = new TreeNode(3);
-        TreeNode nine = new TreeNode(9);
-        TreeNode twenty = new TreeNode(20);
-        TreeNode fifteen = new TreeNode(15);
-        TreeNode seven = new TreeNode(7);
-        tRoot.setLeft(nine);
-        tRoot.setRight(twenty);
-        twenty.setLeft(fifteen);
-        twenty.setRight(seven);
-        System.out.println(Objects.toString(binaryTreeMinDepth.minDepth(tRoot)));
+//        System.out.println("TESTING 111. Minimum Depth of Binary Tree");
+//        BinaryTreeMinDepth binaryTreeMinDepth = new BinaryTreeMinDepth();
+//        //test cases:
+//        //root = [3,9,20,null,null,15,7]
+//        TreeNode tRoot = new TreeNode(3);
+//        TreeNode nine = new TreeNode(9);
+//        TreeNode twenty = new TreeNode(20);
+//        TreeNode fifteen = new TreeNode(15);
+//        TreeNode seven = new TreeNode(7);
+//        tRoot.setLeft(nine);
+//        tRoot.setRight(twenty);
+//        twenty.setLeft(fifteen);
+//        twenty.setRight(seven);
+//        System.out.println(Objects.toString(binaryTreeMinDepth.minDepth(tRoot)));
 
         System.out.println("TESTING 743. Network Delay Time...");
         //Test case:
@@ -355,7 +356,19 @@ public class Main {
         System.out.println(coinChange.coinChange(coins_3, amount_3));
         System.out.println(coinChange.coinChange(coins_4, amount_4));
 
+        //TESTING Inorder Successor In a BST
+        System.out.println("TESING INORDER SUCCESSOR OF A TARGET IN A BINARY SEARCH TREE...");
+        //test tree
+        TreeNode root = new TreeNode(20);
+        root.left = new TreeNode(8);
+        root.right = new TreeNode(22);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(12);
+        root.left.right.left = new TreeNode(10);
+        root.left.right.right = new TreeNode(14);
 
+        InorderSuccessor inorderSuccessor = new InorderSuccessor();
+        System.out.println(inorderSuccessor.inorderSuccessor(root, 8));
 
 
         System.out.println("END OF TESTING...");

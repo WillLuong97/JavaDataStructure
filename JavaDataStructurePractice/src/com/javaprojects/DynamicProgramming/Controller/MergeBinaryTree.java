@@ -44,8 +44,8 @@ public class MergeBinaryTree {
             return root1;
         }
         root1.val += root2.val;
-        root1.setLeft(mergeTrees(root1.getLeft(), root2.getLeft()));
-        root1.setRight(mergeTrees(root1.getRight(), root2.getRight()));
+        root1.left = mergeTrees(root1.left, root2.left);
+        root1.right = mergeTrees(root1.right, root2.right);
 
         return root1;
     }
@@ -76,17 +76,19 @@ public class MergeBinaryTree {
             }
             //if bot the element are not null, then we will sum them up
             t[0].val += t[1].val;
-            if(t[0].getLeft() == null){
-                t[0].setLeft(t[1].getLeft());
+            if(t[0].left == null){
+                t[0].left = t[1].left;
+//                t[0].setLeft(t[1].getLeft());
             } else {
                 //pushing a new pairs of left nodes from tree 1 and 2
-                stack.push(new TreeNode[]{t[0].getLeft(), t[1].getLeft()});
+                stack.push(new TreeNode[]{t[0].left, t[1].left});
             }
-            if(t[1].getLeft() == null){
-                t[1].setLeft(t[0].getLeft());
+            if(t[1].left == null){
+                t[1].left = t[0].left;
+//                t[1].setLeft(t[0].getLeft());
             } else {
                 //pushing a new pairs of left nodes from tree 1 and 2
-                stack.push(new TreeNode[]{t[0].getRight(), t[1].getRight()});
+                stack.push(new TreeNode[]{t[0].right, t[1].right});
             }
         }
         return root1;

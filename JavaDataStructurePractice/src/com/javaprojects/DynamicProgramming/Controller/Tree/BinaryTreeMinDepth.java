@@ -45,13 +45,13 @@ public class BinaryTreeMinDepth {
 
         depth++;
         //if the current node is empty, the we compare to see which path is shorter and take that path
-        if(node.getLeft() == null && node.getRight() == null){
+        if(node.left == null && node.left == null){
             minDepthFound = min(minDepthFound, depth);
             return;
         }
         //traverse both left and right side of the tree
-        traverse(node.getLeft(), depth);
-        traverse(node.getRight(), depth);
+        traverse(node.left, depth);
+        traverse(node.right, depth);
 
     }
 

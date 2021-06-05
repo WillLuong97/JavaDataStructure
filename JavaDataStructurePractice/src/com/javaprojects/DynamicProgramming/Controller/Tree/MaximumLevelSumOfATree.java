@@ -30,11 +30,11 @@ public class MaximumLevelSumOfATree {
                 TreeNode curr_node = queue.poll();
                 sum += curr_node.val;
                 //add the children of the current node onto the queue again
-                if(curr_node.getLeft() != null){
-                    queue.add(curr_node.getLeft());
+                if(curr_node.left != null){
+                    queue.add(curr_node.left);
                 }
-                if(curr_node.getRight() != null){
-                    queue.add(curr_node.getRight());
+                if(curr_node.left != null){
+                    queue.add(curr_node.right);
                 }
             }
             //overried the level sum to make sure that we are always with the level with the highest sum

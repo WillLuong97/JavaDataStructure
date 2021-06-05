@@ -52,8 +52,8 @@ public class SecondMinimumNodeInATree {
     public void dfs(TreeNode node, Set<Integer> set){
         if (node != null){
             set.add(node.val);
-            dfs(node.getLeft(), set);
-            dfs(node.getRight(), set);
+            dfs(node.left, set);
+            dfs(node.right, set);
         }
     }
 
