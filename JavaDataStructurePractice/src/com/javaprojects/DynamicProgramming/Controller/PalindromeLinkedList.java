@@ -41,8 +41,8 @@ public class PalindromeLinkedList {
         ArrayList nodeVal = new ArrayList();
         ListNode current = head;
         while(current != null){
-            nodeVal.add(current.getVal());
-            current = current.getNext();
+            nodeVal.add(current.val);
+            current = current.next;
         }
 
         //traverse through the arraylist backward and check to see if element in the reversed linked list is the same
@@ -50,11 +50,11 @@ public class PalindromeLinkedList {
         int index = nodeVal.size() - 1;
 
         while(current != null){
-            if(current.getVal() != (int) nodeVal.get(index)){
+            if(current.val != (int) nodeVal.get(index)){
                 return false;
             }
 
-            current = current.getNext();
+            current = current.next;
             index--;
         }
 

@@ -11,6 +11,7 @@ import com.javaprojects.DynamicProgramming.Controller.Graph.ProductGrouping;
 import com.javaprojects.DynamicProgramming.Controller.Greedy.BinaryStringContiguosOne;
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.SeatManager;
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.TaskOrder;
+import com.javaprojects.DynamicProgramming.Controller.LinkedListProblem.MergeInBetweenLinkedList;
 import com.javaprojects.DynamicProgramming.Controller.Tree.BinaryTreeMinDepth;
 import com.javaprojects.DynamicProgramming.Controller.Tree.InorderSuccessor;
 import com.javaprojects.DynamicProgramming.Model.GraphNode;
@@ -84,8 +85,8 @@ public class Main {
         ListNode head = new ListNode(1);
         ListNode head1 = new ListNode(0);
         ListNode head2 = new ListNode(1);
-        head.setNext(head1);
-        head1.setNext(head2);
+        head.next = head1;
+        head1.next = head2;
         ConvertBinaryNumberIntoInteger convertBinaryNumberIntoInteger = new ConvertBinaryNumberIntoInteger();
         System.out.println(convertBinaryNumberIntoInteger.getDecimalValue(head));
 
@@ -96,10 +97,10 @@ public class Main {
         ListNode l2 = new ListNode(5);
         ListNode l2_1 = new ListNode(6);
         ListNode l2_2 = new ListNode(4);
-        l1.setNext(l1_1);
-        l1_1.setNext(l1_2);
-        l2.setNext(l2_1);
-        l2_1.setNext(l2_2);
+        l1.next = l1_1;
+        l1_1.next = l1_2;
+        l2.next = l2_1;
+        l2_1.next = l2_2;
         AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
         System.out.println(Objects.toString(addTwoNumbers.addTwoNumbers(l1, l2)));
 
@@ -228,9 +229,9 @@ public class Main {
         ListNode pal_1 = new ListNode(2);
         ListNode pal_2 = new ListNode(2);
         ListNode pal_3 = new ListNode(1);
-        pal.setNext(pal_1);
-        pal_1.setNext(pal_2);
-        pal_2.setNext(pal_3);
+        pal.next = pal_1;
+        pal_1.next = pal_2;
+        pal_2.next = pal_3;
         System.out.println(palindromeLinkedList.isPalindrome(pal));
 
         System.out.println("TESTING FIND SMALLEST AND SECOND SMALLEST ELEMENT IN AN INTEGER ARRAY!");
@@ -369,6 +370,28 @@ public class Main {
 
         InorderSuccessor inorderSuccessor = new InorderSuccessor();
         System.out.println(inorderSuccessor.inorderSuccessor(root, 8));
+
+        //TESING Merge in between linked list:
+        System.out.println("TESTING MERGE IN BETWEEN LINKED LIST...");
+        //creating a linked list:
+        ListNode merge_0 = new ListNode(0);
+        ListNode merge_1 = new ListNode(1);
+        ListNode merge_2 = new ListNode(2);
+        ListNode merge_3 = new ListNode(3);
+        ListNode merge_4 = new ListNode(4);
+        ListNode merge_5 = new ListNode(5);
+        merge_0.next = merge_1;
+        merge_1.next = merge_2;
+        merge_3.next = merge_4;
+        merge_4.next = merge_5;
+        ListNode list_0 = new ListNode(1000000);
+        ListNode list_1 = new ListNode(1000001);
+        ListNode list_2 = new ListNode(1000002);
+        list_0.next = list_1;
+        list_1.next = list_2;
+
+        MergeInBetweenLinkedList mergeInBetweenLinkedList = new MergeInBetweenLinkedList();
+        System.out.println(mergeInBetweenLinkedList.mergeInBetween(merge_0, 3, 4, list_0));
 
 
         System.out.println("END OF TESTING...");

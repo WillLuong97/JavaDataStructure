@@ -48,11 +48,11 @@ Space complexity: O(1), our program is not storing any extra spaces.
 public class ConvertBinaryNumberIntoInteger {
     //Function to convert the binary number in a linked list into an decimal value
     public int getDecimalValue(ListNode head) {
-        int decimal = head.getVal();
+        int decimal = head.val;
         // traverse through the linked list to find the decimal values
-        while(head.getNext()!= null){
-            decimal = decimal * 2 + head.getNext().getVal();
-            head = head.getNext();
+        while(head.next != null){
+            decimal = decimal * 2 + head.next.val;
+            head = head.next;
         }
         return decimal;
     }

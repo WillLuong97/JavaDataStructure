@@ -48,26 +48,26 @@ public class AddTwoNumbers {
         //traverse both tree
         while(p != null || q != null){
             //getting the x and y value to add for the sum
-            int x = (p != null) ? p.getVal() : 0;
-            int y = (q != null) ? q.getVal() : 0;
+            int x = (p != null) ? p.val : 0;
+            int y = (q != null) ? q.val : 0;
             int sum = x + y + carry;
             carry = sum / 10; //the carried over from the addition
             //setting the new tree to have the value of the value
-            curr.setNext(new ListNode(sum % 10));
-            curr = curr.getNext();
+            curr.next = new ListNode(sum % 10);
+            curr = curr.next;
             //getting the next value in the linked list
             if(p != null){
-                p = p.getNext();
+                p = p.next;
             }
             if(q != null){
-                q = q.getNext();
+                q = q.next;
             }
         }
         //if at the end of the tree, we still have the values left in the carried over, then assign it to a new node
         if(carry > 0){
-            curr.setNext(new ListNode(carry));
+            curr.next = new ListNode(carry);
         }
 
-        return dummyNode.getNext();
+        return dummyNode.next;
     }
 }
