@@ -4,10 +4,7 @@ import com.javaprojects.DynamicProgramming.Controller.BackTracking.RestoreIPAddr
 import com.javaprojects.DynamicProgramming.Controller.*;
 import com.javaprojects.DynamicProgramming.Controller.BinarySearch.TimeMap;
 import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.*;
-import com.javaprojects.DynamicProgramming.Controller.Graph.CloneGraph;
-import com.javaprojects.DynamicProgramming.Controller.Graph.GameOfLife;
-import com.javaprojects.DynamicProgramming.Controller.Graph.NetworkDelayTime;
-import com.javaprojects.DynamicProgramming.Controller.Graph.ProductGrouping;
+import com.javaprojects.DynamicProgramming.Controller.Graph.*;
 import com.javaprojects.DynamicProgramming.Controller.Greedy.BinaryStringContiguosOne;
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.SeatManager;
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.TaskOrder;
@@ -391,7 +388,27 @@ public class Main {
         list_1.next = list_2;
 
         MergeInBetweenLinkedList mergeInBetweenLinkedList = new MergeInBetweenLinkedList();
-        System.out.println(mergeInBetweenLinkedList.mergeInBetween(merge_0, 3, 4, list_0));
+//        System.out.println(mergeInBetweenLinkedList.mergeInBetween(merge_0, 3, 4, list_0));
+
+        System.out.println("TESTING ROTATE IMAGE...");
+        RotateImage rotateImage = new RotateImage();
+
+        //test cases:
+        int[][] matrix_1 = new int[][]{{1,2,3}, {4,5,6}, {7,8,9}};
+        int[][] matrix_2 = new int[][]{{5,1,9,11}, {2,4,8,10}, {13,3,6,7}, {15,14,12,16}};
+        int[][] matrix_3 = new int[][]{{1}};
+        int[][] matrix_4 = new int[][]{{1,2}, {3,4}};
+
+
+        rotateImage.rotate(matrix_1);
+        System.out.println(Arrays.deepToString(matrix_1));
+        rotateImage.rotate(matrix_2);
+        System.out.println(Arrays.deepToString(matrix_2));
+        rotateImage.rotate(matrix_3);
+        System.out.println(Arrays.deepToString(matrix_3));
+        rotateImage.rotate(matrix_4);
+        System.out.println(Arrays.deepToString(matrix_4));
+
 
 
         System.out.println("END OF TESTING...");
