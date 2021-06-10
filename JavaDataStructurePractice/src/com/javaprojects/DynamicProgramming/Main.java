@@ -1,5 +1,6 @@
 package com.javaprojects.DynamicProgramming;
 
+import com.javaprojects.DynamicProgramming.Controller.BackTracking.GeneratePermutation;
 import com.javaprojects.DynamicProgramming.Controller.BackTracking.RestoreIPAddresses;
 import com.javaprojects.DynamicProgramming.Controller.*;
 import com.javaprojects.DynamicProgramming.Controller.BinarySearch.TimeMap;
@@ -409,6 +410,15 @@ public class Main {
         rotateImage.rotate(matrix_4);
         System.out.println(Arrays.deepToString(matrix_4));
 
+        System.out.println("TESTING PERMUTATIONS...");
+        //TEST CASE:
+        int[] perm_test_1 = new int[]{1,2,3};
+        int[] perm_test_2 = new int[]{0,1};
+        int[] perm_test_3 = new int[]{1};
+        GeneratePermutation generatePermutation = new GeneratePermutation();
+        System.out.println(generatePermutation.permute(perm_test_1));
+        System.out.println(generatePermutation.permute(perm_test_2));
+        System.out.println(generatePermutation.permute(perm_test_3));
 
 
         System.out.println("END OF TESTING...");
