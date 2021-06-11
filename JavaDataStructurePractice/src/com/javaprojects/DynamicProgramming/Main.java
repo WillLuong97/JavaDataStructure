@@ -12,6 +12,7 @@ import com.javaprojects.DynamicProgramming.Controller.HeapProblem.TaskOrder;
 import com.javaprojects.DynamicProgramming.Controller.LinkedListProblem.MergeInBetweenLinkedList;
 import com.javaprojects.DynamicProgramming.Controller.Tree.BinaryTreeMinDepth;
 import com.javaprojects.DynamicProgramming.Controller.Tree.InorderSuccessor;
+import com.javaprojects.DynamicProgramming.Controller.Tree.InorderSuccessorInBST;
 import com.javaprojects.DynamicProgramming.Model.GraphNode;
 import com.javaprojects.DynamicProgramming.Model.ListNode;
 import com.javaprojects.DynamicProgramming.Model.TreeNode;
@@ -427,6 +428,21 @@ public class Main {
         EggDrop eggDrop = new EggDrop();
         System.out.println(eggDrop.twoEggDrop(floor_1));
         System.out.println(eggDrop.twoEggDrop(floor_2));
+
+        //TESTING INORDER SUCCESSOR OF A BINARY SEARCH TREE
+        System.out.println("TESTING Inorder Successor in Binary Search Tree...");
+        //create a test tree:
+        TreeNode bst_root = new TreeNode(20);
+        bst_root.right = new TreeNode(22);
+        bst_root.left = new TreeNode(8);
+        bst_root.left.left = new TreeNode(4);
+        bst_root.left.right = new TreeNode(12);
+        bst_root.left.right.left = new TreeNode(10);
+        bst_root.left.right.right = new TreeNode(14);
+        InorderSuccessorInBST inorderSuccessorInBST = new InorderSuccessorInBST();
+        System.out.println(inorderSuccessorInBST.inorderSuccessor(bst_root, 8).val);
+        System.out.println(inorderSuccessorInBST.inorderSuccessor(bst_root, 10).val);
+        System.out.println(inorderSuccessorInBST.inorderSuccessor(bst_root, 14).val);
 
 
         System.out.println("END OF TESTING...");
