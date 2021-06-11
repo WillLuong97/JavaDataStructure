@@ -415,10 +415,18 @@ public class Main {
         int[] perm_test_1 = new int[]{1,2,3};
         int[] perm_test_2 = new int[]{0,1};
         int[] perm_test_3 = new int[]{1};
-        GeneratePermutation generatePermutation = new GeneratePermutation();
-        System.out.println(generatePermutation.permute(perm_test_1));
-        System.out.println(generatePermutation.permute(perm_test_2));
-        System.out.println(generatePermutation.permute(perm_test_3));
+//        GeneratePermutation generatePermutation = new GeneratePermutation();
+//        System.out.println(generatePermutation.permute(perm_test_1));
+//        System.out.println(generatePermutation.permute(perm_test_2));
+//        System.out.println(generatePermutation.permute(perm_test_3));
+
+        System.out.println("TESTING 887. 1884. Egg Drop With 2 Eggs and N Floors...");
+        //Generate test cases:
+        int floor_1 = 2;
+        int floor_2 = 100;
+        EggDrop eggDrop = new EggDrop();
+        System.out.println(eggDrop.twoEggDrop(floor_1));
+        System.out.println(eggDrop.twoEggDrop(floor_2));
 
 
         System.out.println("END OF TESTING...");
