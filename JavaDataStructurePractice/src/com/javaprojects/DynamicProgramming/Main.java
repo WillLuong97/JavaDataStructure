@@ -10,6 +10,7 @@ import com.javaprojects.DynamicProgramming.Controller.Greedy.BinaryStringContigu
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.SeatManager;
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.TaskOrder;
 import com.javaprojects.DynamicProgramming.Controller.LinkedListProblem.MergeInBetweenLinkedList;
+import com.javaprojects.DynamicProgramming.Controller.LinkedListProblem.NextGreaterNode;
 import com.javaprojects.DynamicProgramming.Controller.Tree.BinaryTreeMinDepth;
 import com.javaprojects.DynamicProgramming.Controller.Tree.InorderSuccessor;
 import com.javaprojects.DynamicProgramming.Controller.Tree.InorderSuccessorInBST;
@@ -444,7 +445,25 @@ public class Main {
         System.out.println(inorderSuccessorInBST.inorderSuccessor(bst_root, 10).val);
         System.out.println(inorderSuccessorInBST.inorderSuccessor(bst_root, 14).val);
 
+        System.out.println("TESTING 1019. Next Greater Node In Linked List...");
+        //Test case:
+        ListNode greaterNode = new ListNode(2);
+        greaterNode.next = new ListNode(1);
+        greaterNode.next = new ListNode(5);
+        NextGreaterNode nextGreaterNode = new NextGreaterNode();
+        System.out.println(nextGreaterNode.nextLargerNodes(greaterNode));
 
+
+        ListNode greaterNode_1 = new ListNode(2);
+        greaterNode_1.next = new ListNode(1);
+        greaterNode_1.next = new ListNode(5);
+        System.out.println(nextGreaterNode.nextLargerNodes(greaterNode_1));
+
+
+        ListNode greaterNode_2 = new ListNode(2);
+        greaterNode_2.next = new ListNode(1);
+        greaterNode_2.next = new ListNode(5);
+        System.out.println(nextGreaterNode.nextLargerNodes(greaterNode_2));
         System.out.println("END OF TESTING...");
     }
 }
