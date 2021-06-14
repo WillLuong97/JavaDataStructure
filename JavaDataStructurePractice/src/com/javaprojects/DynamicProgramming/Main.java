@@ -464,6 +464,19 @@ public class Main {
         greaterNode_2.next = new ListNode(1);
         greaterNode_2.next = new ListNode(5);
         System.out.println(nextGreaterNode.nextLargerNodes(greaterNode_2));
+
+        //TESTING PRODUCT OF ARRAY EXCEPT FOR ITSELF
+        System.out.println("TESTING 238. Product of Array Except Self...");
+        //test case:
+        int[] prodNum_1 = new int[]{1,2,3,4};
+        int[] prodNums_2 = new int[]{-1,1,0,-3,3};
+        ProductOfArrayWithoutItself productOfArrayWithoutItself = new ProductOfArrayWithoutItself();
+        System.out.println(Arrays.toString(productOfArrayWithoutItself.productExceptSelf(prodNum_1)));
+        System.out.println(Arrays.toString(productOfArrayWithoutItself.productExceptSelf(prodNums_2)));
+        System.out.println("TESTING THE FUNCTION WITH O(1) CONSTANT SPACE...");
+        System.out.println(Arrays.toString(productOfArrayWithoutItself.productExceptSelf_NO_EXTRA_SPACE(prodNum_1)));
+        System.out.println(Arrays.toString(productOfArrayWithoutItself.productExceptSelf_NO_EXTRA_SPACE(prodNums_2)));
+
         System.out.println("END OF TESTING...");
     }
 }
