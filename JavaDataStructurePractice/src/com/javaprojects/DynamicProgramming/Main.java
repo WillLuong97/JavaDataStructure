@@ -477,6 +477,16 @@ public class Main {
         System.out.println(Arrays.toString(productOfArrayWithoutItself.productExceptSelf_NO_EXTRA_SPACE(prodNum_1)));
         System.out.println(Arrays.toString(productOfArrayWithoutItself.productExceptSelf_NO_EXTRA_SPACE(prodNums_2)));
 
+
+        System.out.println("********Graph DFS Practice Problem ****************");
+        System.out.println("Printing out all word in a 2d matrix using DFs.....");
+//        char[][] word_arr = new char[][] {{'A', 'B', 'C', 'F'}, {'D', 'E', 'O', 'P'}, {'Q', 'U', 'E','T'}, {'Y', 'I', 'X', 'L'}};
+        int [][] int_matrix = new int[][] {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
+
+        DFS dfs = new DFS();
+        dfs.printDFS(int_matrix);
+
+
         System.out.println("END OF TESTING...");
     }
 }
