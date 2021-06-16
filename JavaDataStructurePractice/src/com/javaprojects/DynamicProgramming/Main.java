@@ -1,6 +1,7 @@
 package com.javaprojects.DynamicProgramming;
 
 import com.javaprojects.DynamicProgramming.Controller.BackTracking.GeneratePermutation;
+import com.javaprojects.DynamicProgramming.Controller.BackTracking.LetterCombinationsOFAPhoneNumber;
 import com.javaprojects.DynamicProgramming.Controller.BackTracking.RestoreIPAddresses;
 import com.javaprojects.DynamicProgramming.Controller.*;
 import com.javaprojects.DynamicProgramming.Controller.BinarySearch.TimeMap;
@@ -485,6 +486,14 @@ public class Main {
 
         DFS dfs = new DFS();
         dfs.printDFS(int_matrix);
+
+        System.out.println("TESTING 17. Letter Combinations of a Phone Number...");
+        //test cases:
+        String digits = "23";
+        String digits_1 = "";
+        LetterCombinationsOFAPhoneNumber letterCombinationsOFAPhoneNumber = new LetterCombinationsOFAPhoneNumber();
+        System.out.println(letterCombinationsOFAPhoneNumber.letterCombinations(digits_1));
+        System.out.println(letterCombinationsOFAPhoneNumber.letterCombinations(digits_1));
 
 
         System.out.println("END OF TESTING...");
