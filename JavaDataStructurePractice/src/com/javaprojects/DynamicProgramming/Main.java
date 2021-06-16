@@ -9,6 +9,7 @@ import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems
 import com.javaprojects.DynamicProgramming.Controller.Graph.*;
 import com.javaprojects.DynamicProgramming.Controller.Greedy.BinaryStringContiguosOne;
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.SeatManager;
+import com.javaprojects.DynamicProgramming.Controller.HeapProblem.SortThroughHeap;
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.TaskOrder;
 import com.javaprojects.DynamicProgramming.Controller.LinkedListProblem.MergeInBetweenLinkedList;
 import com.javaprojects.DynamicProgramming.Controller.LinkedListProblem.NextGreaterNode;
@@ -495,7 +496,21 @@ public class Main {
         System.out.println(letterCombinationsOFAPhoneNumber.letterCombinations(digits));
         System.out.println(letterCombinationsOFAPhoneNumber.letterCombinations(digits_1));
 
+        //Sorting algorithm using a HEAP
+        System.out.println("TESTING SORTING ALGORITHM USING A HEAP...");
+        //TEST CASES:
+        int[] sort_1 = new int[]{5,1,7,8,2,0};
+        int[] sort_2 = new int[]{};
+        int[] sort_3 = new int[]{5,1,1,8,2,0};
 
+
+        SortThroughHeap sortThroughHeap = new SortThroughHeap();
+        sortThroughHeap.sortWithHeap(sort_1);
+        sortThroughHeap.sortWithHeap(sort_2);
+        sortThroughHeap.sortWithHeap(sort_3);
+        System.out.println(Arrays.toString(sort_1));
+        System.out.println(Arrays.toString(sort_2));
+        System.out.println(Arrays.toString(sort_3));
         System.out.println("END OF TESTING...");
     }
 }
