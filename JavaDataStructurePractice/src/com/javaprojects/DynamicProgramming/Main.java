@@ -492,7 +492,7 @@ public class Main {
         String digits = "23";
         String digits_1 = "";
         LetterCombinationsOFAPhoneNumber letterCombinationsOFAPhoneNumber = new LetterCombinationsOFAPhoneNumber();
-        System.out.println(letterCombinationsOFAPhoneNumber.letterCombinations(digits_1));
+        System.out.println(letterCombinationsOFAPhoneNumber.letterCombinations(digits));
         System.out.println(letterCombinationsOFAPhoneNumber.letterCombinations(digits_1));
 
 
