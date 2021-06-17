@@ -65,4 +65,32 @@ public class EggDrop {
 
         return cache[totalEggs][n];
     }
+
+    public int superEggDrop(int k, int n) {
+        //create a 2-d array to cache the solution of each subproblem into the dp array
+        int[][] cache = new int[k+1][n+1];
+        //base case 1: if we have 0 egg, then we drop 0 times, if we have 1 egg, then we can drop the egg to the n floor
+        for(int i = 1; i <= k; i++){
+            cache[i][0] = 0;
+            cache[i][1] = 1;
+        }
+        //base case 2: if we have 1 egg, then we drop the egg by the number of
+        for(int i = 1; i <= n; i++){
+            cache[1][i] = i;
+        }
+        //traverse through the 2-d matrix cache to solve each subproblem
+        for(int i = 2; i <= k; i++){
+            for(int j = 2; j <= n; j++){
+                cache[i][j] = Integer.MAX_VALUE;
+                //go through the current floor to determine how much that we would need to drop the egg.
+                for(int curr_floor = 1; curr_floor <= j; curr_floor++){
+                    int costOfWorstOutCome = Math.max(cache[i][j-curr_floor], cache[i-1][curr_floor-1]);
+                    int accountForDroppingAtThisFloor = costOfWorstOutCome + 1;
+                    cache[i][j] = Math.min(cache[i][j], accountForDroppingAtThisFloor);
+                }
+            }
+        }
+        return cache[k][n];
+    }
+
 }
