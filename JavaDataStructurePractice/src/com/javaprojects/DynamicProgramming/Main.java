@@ -4,6 +4,7 @@ import com.javaprojects.DynamicProgramming.Controller.BackTracking.GeneratePermu
 import com.javaprojects.DynamicProgramming.Controller.BackTracking.LetterCombinationsOFAPhoneNumber;
 import com.javaprojects.DynamicProgramming.Controller.BackTracking.RestoreIPAddresses;
 import com.javaprojects.DynamicProgramming.Controller.*;
+import com.javaprojects.DynamicProgramming.Controller.BinarySearch.FindPeakElement;
 import com.javaprojects.DynamicProgramming.Controller.BinarySearch.TimeMap;
 import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.*;
 import com.javaprojects.DynamicProgramming.Controller.Graph.*;
@@ -502,8 +503,6 @@ public class Main {
         int[] sort_1 = new int[]{5,1,7,8,2,0};
         int[] sort_2 = new int[]{};
         int[] sort_3 = new int[]{5,1,1,8,2,0};
-
-
         SortThroughHeap sortThroughHeap = new SortThroughHeap();
         sortThroughHeap.sortWithHeap(sort_1);
         sortThroughHeap.sortWithHeap(sort_2);
@@ -511,6 +510,14 @@ public class Main {
         System.out.println(Arrays.toString(sort_1));
         System.out.println(Arrays.toString(sort_2));
         System.out.println(Arrays.toString(sort_3));
+
+        System.out.println("TESTING FIND PEAK ELEMENT...");
+        System.out.println("FIND PEAK ELEMENT IN A 2D GRID: ");
+        //TEST CASES:
+        FindPeakElement findPeakElement = new FindPeakElement();
+        System.out.println(findPeakElement.findPeakGrid(new int[][] {{1,4}, {3,2}}));
+        System.out.println(findPeakElement.findPeakGrid(new int[][] {{10,20,15}, {21,30,14}, {7,16,32}}));
+
         System.out.println("END OF TESTING...");
     }
 }
