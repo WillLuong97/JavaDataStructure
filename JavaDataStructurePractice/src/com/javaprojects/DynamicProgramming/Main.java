@@ -20,6 +20,7 @@ import com.javaprojects.DynamicProgramming.Controller.Tree.InorderSuccessorInBST
 import com.javaprojects.DynamicProgramming.Model.GraphNode;
 import com.javaprojects.DynamicProgramming.Model.ListNode;
 import com.javaprojects.DynamicProgramming.Model.TreeNode;
+import com.sun.java.accessibility.util.TopLevelWindowListener;
 
 import java.util.Arrays;
 import java.util.List;
@@ -523,6 +524,12 @@ public class Main {
         System.out.println(test.findSquare(5));
         System.out.println(test.findSquare(-1));
 
+
+        System.out.println("TESTING 2D array summation under hour glass....");
+        //test case:
+        int[][] hourGlassTest = new int[][]{{-9, -9, -9,  1, 1, 1, }, {0, -9,  0,  4, 3, 2}, {-9, -9, -9,  1, 2, 3}, {0,  0,  8,  6, 6, 0}, {0,  0,  0, -2, 0, 0}, { 0,  0,  1,  2, 4, 0}};
+        TwoDimnestionArrSummation twoDimnestionArrSummation = new TwoDimnestionArrSummation();
+        System.out.println(twoDimnestionArrSummation.hourGlassSummation(hourGlassTest));
 
         System.out.println("END OF TESTING...");
     }
