@@ -518,6 +518,12 @@ public class Main {
         System.out.println(findPeakElement.findPeakGrid(new int[][] {{1,4}, {3,2}}));
         System.out.println(findPeakElement.findPeakGrid(new int[][] {{10,20,15}, {21,30,14}, {7,16,32}}));
 
+        System.out.println("TESTING FIND SQUARE...");
+        Test test = new Test();
+        System.out.println(test.findSquare(5));
+        System.out.println(test.findSquare(-1));
+
+
         System.out.println("END OF TESTING...");
     }
 }
