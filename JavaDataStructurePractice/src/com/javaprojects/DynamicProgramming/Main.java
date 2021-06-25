@@ -20,11 +20,13 @@ import com.javaprojects.DynamicProgramming.Controller.Tree.InorderSuccessorInBST
 import com.javaprojects.DynamicProgramming.Model.GraphNode;
 import com.javaprojects.DynamicProgramming.Model.ListNode;
 import com.javaprojects.DynamicProgramming.Model.TreeNode;
+import com.javaprojects.DynamicProgramming.View.LevelOrderTreeTraversal;
 import com.sun.java.accessibility.util.TopLevelWindowListener;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.Queue;
 
 public class Main {
     public static void main(String[] args) {
@@ -531,8 +533,10 @@ public class Main {
         TwoDimnestionArrSummation twoDimnestionArrSummation = new TwoDimnestionArrSummation();
         System.out.println(twoDimnestionArrSummation.hourGlassSummation(hourGlassTest));
 
-        System.out.println("TESTING 1718. Construct the Lexicographically Largest Valid Sequence...");
-
+//        System.out.println("TESTING 1718. Construct the Lexicographically Largest Valid Sequence...");
+        System.out.println("TESTING LEVEL ORDER TRAVERSAL...");
+        LevelOrderTreeTraversal levelOrderTreeTraversal = new LevelOrderTreeTraversal();
+        levelOrderTreeTraversal.printLevelOrderTraversal(root);
 
         System.out.println("END OF TESTING...");
     }
