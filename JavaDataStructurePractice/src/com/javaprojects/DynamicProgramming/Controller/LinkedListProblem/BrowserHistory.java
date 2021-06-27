@@ -76,9 +76,8 @@ public class BrowserHistory {
     // **** TODO: backtrack to the previous page from the current pointer based on the number of steps *******
     public String back(int steps) {
         //iterate through the list backward until we have walked through all the steps
-        while(curr != null && steps --> 0){
+        while(curr.prev != null && steps --> 0){
             curr = curr.prev;
-            steps--;
         }
         return curr.val;
     }
@@ -87,6 +86,7 @@ public class BrowserHistory {
     public String forward(int steps) {
         //iterate through the next element in the array until we hvae
         while(curr.next != null && steps --> 0){
+            //moving the current pointer in the forward direction till the limit step
             curr = curr.next;
         }
         return curr.val;
