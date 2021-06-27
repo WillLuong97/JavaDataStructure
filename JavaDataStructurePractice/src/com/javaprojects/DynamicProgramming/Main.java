@@ -12,6 +12,7 @@ import com.javaprojects.DynamicProgramming.Controller.Greedy.BinaryStringContigu
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.SeatManager;
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.SortThroughHeap;
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.TaskOrder;
+import com.javaprojects.DynamicProgramming.Controller.LinkedListProblem.BrowserHistory;
 import com.javaprojects.DynamicProgramming.Controller.LinkedListProblem.MergeInBetweenLinkedList;
 import com.javaprojects.DynamicProgramming.Controller.LinkedListProblem.NextGreaterNode;
 import com.javaprojects.DynamicProgramming.Controller.Tree.BinaryTreeMinDepth;
@@ -537,6 +538,19 @@ public class Main {
         System.out.println("TESTING LEVEL ORDER TRAVERSAL...");
         LevelOrderTreeTraversal levelOrderTreeTraversal = new LevelOrderTreeTraversal();
         levelOrderTreeTraversal.printLevelOrderTraversal(root);
+
+        System.out.println("TESTING BROWSER HISTORY...");
+        BrowserHistory browserHistory = new BrowserHistory("leetcode.com");
+        browserHistory.visit("google.com");
+        browserHistory.visit("facebook.com");
+        browserHistory.visit("youtube.com");
+        System.out.println(browserHistory.back(1));
+        System.out.println(browserHistory.back(1));
+        System.out.println(browserHistory.forward(1));
+        browserHistory.visit("linkedin.com");
+        System.out.println(browserHistory.forward(2));
+        System.out.println(browserHistory.back(2));
+        System.out.println(browserHistory.back(7));
 
         System.out.println("END OF TESTING...");
     }

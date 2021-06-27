@@ -12,7 +12,6 @@ public class LevelOrderTreeTraversal {
     We will take push each tree node onto the queue and pop them out to print its value and
     pushing its children sub tree onto the queue for further processing unitl the end
 
-
     Time complexity: O(n) is our worst case as the algorithm will have to run through all element in the tree node to print element out
     Space complexity: O(n), we have to allocate space for a queue to store its current treenode element
    */
