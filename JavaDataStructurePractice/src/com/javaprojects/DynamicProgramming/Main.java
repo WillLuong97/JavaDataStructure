@@ -1,6 +1,7 @@
 package com.javaprojects.DynamicProgramming;
 
 import com.javaprojects.DynamicProgramming.Controller.BackTracking.GeneratePermutation;
+import com.javaprojects.DynamicProgramming.Controller.BackTracking.IncreasingSubsequence;
 import com.javaprojects.DynamicProgramming.Controller.BackTracking.LetterCombinationsOFAPhoneNumber;
 import com.javaprojects.DynamicProgramming.Controller.BackTracking.RestoreIPAddresses;
 import com.javaprojects.DynamicProgramming.Controller.*;
@@ -570,6 +571,14 @@ public class Main {
         System.out.println(reorderRoutes.minReorder(routes_2, connection_2));
         System.out.println(reorderRoutes.minReorder(routes_3, connection_3));
         System.out.println(reorderRoutes.minReorder(routes_4, connection_4));
+
+        System.out.println("TESTING 491. Increasing Subsequences...");
+        int[] test_num_sequence = new int[]{4,6,7,7};
+        int[] test_num_sequence_2 = new int[]{4,4,3,2,1};
+
+        IncreasingSubsequence increasingSubsequence = new IncreasingSubsequence();
+        System.out.println(increasingSubsequence.findSubsequences(test_num_sequence));
+        System.out.println(increasingSubsequence.findSubsequences(test_num_sequence_2));
 
 
         System.out.println("END OF TESTING...");
