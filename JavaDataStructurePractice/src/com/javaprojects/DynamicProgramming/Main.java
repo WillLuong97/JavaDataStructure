@@ -552,6 +552,26 @@ public class Main {
         System.out.println(browserHistory.back(2));
         System.out.println(browserHistory.back(7));
 
+        System.out.println("TESTING 1466. Reorder Routes to Make All Paths Lead to the City Zero...");
+        //test case:
+        int routes = 6;
+        int[][] connection_1 = new int[][]{{0,1}, {1,3}, {2,3}, {4,0}, {4,5}};
+
+        int routes_2 = 5;
+        int[][] connection_2 = new int[][]{{1,0}, {1,2}, {3,2}, {3,4}};
+
+        int routes_3 = 3;
+        int[][] connection_3 = new int[][]{{1,0}, {2,0}};
+        int routes_4 = 3;
+        int[][] connection_4 = new int[][]{{1,2}, {2,0}};
+
+        ReorderRoutes reorderRoutes = new ReorderRoutes();
+        System.out.println(reorderRoutes.minReorder(routes, connection_1));
+        System.out.println(reorderRoutes.minReorder(routes_2, connection_2));
+        System.out.println(reorderRoutes.minReorder(routes_3, connection_3));
+        System.out.println(reorderRoutes.minReorder(routes_4, connection_4));
+
+
         System.out.println("END OF TESTING...");
     }
 }
