@@ -10,6 +10,7 @@ import com.javaprojects.DynamicProgramming.Controller.BinarySearch.TimeMap;
 import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.*;
 import com.javaprojects.DynamicProgramming.Controller.Graph.*;
 import com.javaprojects.DynamicProgramming.Controller.Greedy.BinaryStringContiguosOne;
+import com.javaprojects.DynamicProgramming.Controller.Greedy.CitySkyline;
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.SeatManager;
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.SortThroughHeap;
 import com.javaprojects.DynamicProgramming.Controller.HeapProblem.TaskOrder;
@@ -580,6 +581,13 @@ public class Main {
         System.out.println(increasingSubsequence.findSubsequences(test_num_sequence));
         System.out.println(increasingSubsequence.findSubsequences(test_num_sequence_2));
 
+
+        System.out.println("TESTING 807. Max Increase to Keep City Skyline...");
+        int[][] city_grid = new int[][] {{3,0,8,4},{2,4,5,7},{9,2,6,3},{0,3,1,0}};
+        int[][] city_grid_2 = new int[][] {{0,0,0},{0,0,0},{0,0,0},{0,0,0}};
+        CitySkyline citySkyline = new CitySkyline();
+        System.out.println(citySkyline.maxIncreaseKeepingSkyline(city_grid));
+        System.out.println(citySkyline.maxIncreaseKeepingSkyline(city_grid_2));
 
         System.out.println("END OF TESTING...");
     }
