@@ -581,13 +581,18 @@ public class Main {
         System.out.println(increasingSubsequence.findSubsequences(test_num_sequence));
         System.out.println(increasingSubsequence.findSubsequences(test_num_sequence_2));
 
+        System.out.println("TESTING FIBONACCI SEQUENCE...");
+        FibonacciSequence fibonacciSequence = new FibonacciSequence();
 
-        System.out.println("TESTING 807. Max Increase to Keep City Skyline...");
-        int[][] city_grid = new int[][] {{3,0,8,4},{2,4,5,7},{9,2,6,3},{0,3,1,0}};
-        int[][] city_grid_2 = new int[][] {{0,0,0},{0,0,0},{0,0,0},{0,0,0}};
-        CitySkyline citySkyline = new CitySkyline();
-        System.out.println(citySkyline.maxIncreaseKeepingSkyline(city_grid));
-        System.out.println(citySkyline.maxIncreaseKeepingSkyline(city_grid_2));
+        System.out.println("********Brute force + Recursive Approach ********");
+        System.out.println(fibonacciSequence.fib_RECURSION(2));
+        System.out.println(fibonacciSequence.fib_RECURSION(3));
+        System.out.println(fibonacciSequence.fib_RECURSION(4));
+
+        System.out.println("*****Bottom Up Approach********");
+        System.out.println(fibonacciSequence.fib_BOTTOM_UP(2));
+        System.out.println(fibonacciSequence.fib_BOTTOM_UP(3));
+        System.out.println(fibonacciSequence.fib_BOTTOM_UP(4));
 
         System.out.println("END OF TESTING...");
     }
