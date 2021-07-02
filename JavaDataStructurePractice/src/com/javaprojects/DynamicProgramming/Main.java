@@ -594,6 +594,12 @@ public class Main {
         System.out.println(fibonacciSequence.fib_BOTTOM_UP(3));
         System.out.println(fibonacciSequence.fib_BOTTOM_UP(4));
 
+
+        System.out.println("TESTING PASCAL TRIANGLE...");
+
+        PascalTriangle pascalTriangle = new PascalTriangle();
+        System.out.println(pascalTriangle.generate(5));
+        System.out.println(pascalTriangle.generate(1));
         System.out.println("END OF TESTING...");
     }
 }
