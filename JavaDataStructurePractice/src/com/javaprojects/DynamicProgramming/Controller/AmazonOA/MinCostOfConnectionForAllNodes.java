@@ -63,7 +63,7 @@ public class MinCostOfConnectionForAllNodes {
 
     //helper method to run bfs through the connections
     private static List<Connections> bfsHelper(int nums, Connections startConnectionSet, HashMap<Character, List<Connections>> hashMap){
-        HashSet<Character> visited = new HashSet();
+        HashSet<Character> visited = new HashSet<>();
         List<Connections> result = new ArrayList<>();
         //create a priority queue to store the processing connections based on its cost with priority given the minimum ones
         Queue<Connections> pq = new PriorityQueue<>((a,b) -> a.cost-b.cost);
@@ -73,7 +73,7 @@ public class MinCostOfConnectionForAllNodes {
 
         while(!pq.isEmpty()){
             int size = pq.size();
-            for(int i = 0; i <= size; i++){
+            for(int i = 0; i < size; i++){
                 //extracting the connection set that has minimum cost
                 Connections curr_conn = pq.poll();
                 //check to see if the connection set has been visited or not
@@ -87,7 +87,6 @@ public class MinCostOfConnectionForAllNodes {
                 for(Connections next_conn : nextConnectionSet){
                     pq.add(next_conn);
                 }
-
             }
         }
         return result;
