@@ -95,7 +95,7 @@ public class AssemblyLineScheduling {
 
         //set up the dp base case: at entry time, the processing time for each line are e[0] + the first station time
         T1[0] = e[0] + a[0][0]; //time to leave the first station
-        T2[0] = e[0] + a[1][0]; //time to leave the second station
+        T2[0] = e[1] + a[1][0]; //time to leave the second station
 
         //Go through the assembly lines and find the minimum processing time
         for(int i = 1; i < stations; ++i){
