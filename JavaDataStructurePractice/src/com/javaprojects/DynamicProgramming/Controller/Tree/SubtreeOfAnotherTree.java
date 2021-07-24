@@ -64,7 +64,7 @@ public class SubtreeOfAnotherTree {
             //Found a mismatch in the number of node in each of the subtree
             return false;
         }
-        
+
         if(curr_root.val != curr_sub_root.val){
             return false;
         }
