@@ -1,35 +1,29 @@
 package com.javaprojects.DynamicProgramming;
 
-import com.javaprojects.DynamicProgramming.Controller.BackTracking.GeneratePermutation;
-import com.javaprojects.DynamicProgramming.Controller.BackTracking.IncreasingSubsequence;
-import com.javaprojects.DynamicProgramming.Controller.BackTracking.LetterCombinationsOFAPhoneNumber;
-import com.javaprojects.DynamicProgramming.Controller.BackTracking.RestoreIPAddresses;
+import com.javaprojects.DynamicProgramming.Controller.AmazonOA.DynamicProgramming.AssemblyLineScheduling;
+import com.javaprojects.DynamicProgramming.Controller.AmazonOA.MinCostOfConnectionForAllNodes;
+import com.javaprojects.DynamicProgramming.Controller.BackTracking.*;
 import com.javaprojects.DynamicProgramming.Controller.*;
 import com.javaprojects.DynamicProgramming.Controller.BinarySearch.FindPeakElement;
 import com.javaprojects.DynamicProgramming.Controller.BinarySearch.TimeMap;
+import com.javaprojects.DynamicProgramming.Controller.BitProblem.CircularPermutation;
 import com.javaprojects.DynamicProgramming.Controller.DynamicProgrammingProblems.*;
+import com.javaprojects.DynamicProgramming.Controller.ExpediaInterview.DeliveryManagementSystem;
+import com.javaprojects.DynamicProgramming.Controller.ExpediaInterview.DiagonalTraversalOfBinaryTree;
 import com.javaprojects.DynamicProgramming.Controller.Graph.*;
-import com.javaprojects.DynamicProgramming.Controller.Greedy.BinaryStringContiguosOne;
-import com.javaprojects.DynamicProgramming.Controller.Greedy.CitySkyline;
-import com.javaprojects.DynamicProgramming.Controller.HeapProblem.SeatManager;
-import com.javaprojects.DynamicProgramming.Controller.HeapProblem.SortThroughHeap;
-import com.javaprojects.DynamicProgramming.Controller.HeapProblem.TaskOrder;
-import com.javaprojects.DynamicProgramming.Controller.LinkedListProblem.BrowserHistory;
-import com.javaprojects.DynamicProgramming.Controller.LinkedListProblem.MergeInBetweenLinkedList;
-import com.javaprojects.DynamicProgramming.Controller.LinkedListProblem.NextGreaterNode;
-import com.javaprojects.DynamicProgramming.Controller.Tree.BinaryTreeMinDepth;
-import com.javaprojects.DynamicProgramming.Controller.Tree.InorderSuccessor;
-import com.javaprojects.DynamicProgramming.Controller.Tree.InorderSuccessorInBST;
+import com.javaprojects.DynamicProgramming.Controller.Greedy.*;
+import com.javaprojects.DynamicProgramming.Controller.HeapProblem.*;
+import com.javaprojects.DynamicProgramming.Controller.LinkedListProblem.*;
+import com.javaprojects.DynamicProgramming.Controller.Tree.*;
 import com.javaprojects.DynamicProgramming.Model.GraphNode;
 import com.javaprojects.DynamicProgramming.Model.ListNode;
 import com.javaprojects.DynamicProgramming.Model.TreeNode;
 import com.javaprojects.DynamicProgramming.View.LevelOrderTreeTraversal;
-import com.sun.java.accessibility.util.TopLevelWindowListener;
+import com.sun.source.tree.Tree;
+//import com.sun.java.accessibility.util.TopLevelWindowListener;
+//import jdk.swing.interop.SwingInterOpUtils;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-import java.util.Queue;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -439,20 +433,20 @@ public class Main {
         System.out.println(eggDrop.twoEggDrop(floor_1));
         System.out.println(eggDrop.twoEggDrop(floor_2));
 
-        //TESTING INORDER SUCCESSOR OF A BINARY SEARCH TREE
-        System.out.println("TESTING Inorder Successor in Binary Search Tree...");
-        //create a test tree:
-        TreeNode bst_root = new TreeNode(20);
-        bst_root.right = new TreeNode(22);
-        bst_root.left = new TreeNode(8);
-        bst_root.left.left = new TreeNode(4);
-        bst_root.left.right = new TreeNode(12);
-        bst_root.left.right.left = new TreeNode(10);
-        bst_root.left.right.right = new TreeNode(14);
-        InorderSuccessorInBST inorderSuccessorInBST = new InorderSuccessorInBST();
-        System.out.println(inorderSuccessorInBST.inorderSuccessor(bst_root, 8).val);
-        System.out.println(inorderSuccessorInBST.inorderSuccessor(bst_root, 10).val);
-        System.out.println(inorderSuccessorInBST.inorderSuccessor(bst_root, 14).val);
+//        //TESTING INORDER SUCCESSOR OF A BINARY SEARCH TREE
+//        System.out.println("TESTING Inorder Successor in Binary Search Tree...");
+//        //create a test tree:
+//        TreeNode bst_root = new TreeNode(20);
+//        bst_root.right = new TreeNode(22);
+//        bst_root.left = new TreeNode(8);
+//        bst_root.left.left = new TreeNode(4);
+//        bst_root.left.right = new TreeNode(12);
+//        bst_root.left.right.left = new TreeNode(10);
+//        bst_root.left.right.right = new TreeNode(14);
+//        InorderSuccessorInBST inorderSuccessorInBST = new InorderSuccessorInBST();
+//        System.out.println(inorderSuccessorInBST.inorderSuccessor(bst_root, 8).val);
+//        System.out.println(inorderSuccessorInBST.inorderSuccessor(bst_root, 10).val);
+//        System.out.println(inorderSuccessorInBST.inorderSuccessor(bst_root, 14).val);
 
         System.out.println("TESTING 1019. Next Greater Node In Linked List...");
         //Test case:
@@ -595,11 +589,271 @@ public class Main {
         System.out.println(fibonacciSequence.fib_BOTTOM_UP(4));
 
 
-        System.out.println("TESTING PASCAL TRIANGLE...");
+//        System.out.println("TESTING PASCAL TRIANGLE...");
+//
+//        PascalTriangle pascalTriangle = new PascalTriangle();
+//        System.out.println(pascalTriangle.generate(5));
+//        System.out.println(pascalTriangle.generate(1));
 
-        PascalTriangle pascalTriangle = new PascalTriangle();
-        System.out.println(pascalTriangle.generate(5));
-        System.out.println(pascalTriangle.generate(1));
+
+        System.out.println("TESTING 110. Balanced Binary Tree...");
+
+        //Test tree
+        TreeNode balanced_root = new TreeNode(3);
+        balanced_root.left = new TreeNode(9);
+        balanced_root.right = new TreeNode(20);
+        balanced_root.right.left = new TreeNode(15);
+        balanced_root.right.right = new TreeNode(7);
+        BalancedBinaryTree balancedBinaryTree = new BalancedBinaryTree();
+        System.out.println(balancedBinaryTree.isBalanced(balanced_root));
+
+
+        System.out.println("TESTING MINIMUM COST TO CONNECT ALL SERVER TOGETHER...");
+        MinCostOfConnectionForAllNodes minCostOfConnectionForAllNodes = new MinCostOfConnectionForAllNodes();
+        minCostOfConnectionForAllNodes.findMinCostToConnectNodes_MAIN_CALLER();
+
+//        findMinCostToConnectNodes_MAIN_CALLER();
+
+        System.out.println("TESING 1238. Circular Permutation in Binary Representation...");
+
+        int bitN = 2;
+        int start = 3;
+
+        int bitN_1 = 3;
+        int start_1 = 2;
+
+        CircularPermutation circularPermutation = new CircularPermutation();
+        System.out.println(circularPermutation.circularPermutation(bitN, start));
+        System.out.println(circularPermutation.circularPermutation(bitN_1, start_1));
+
+        System.out.println("TESTING 1464. Maximum Product of Two Elements in an Array...");
+
+        int[] test_nums_1 = new int[]{3,4,5,2};
+        int[] test_nums_2 = new int[]{1,5,4,5};
+        int[] test_nums_3 = new int[]{3,7};
+
+        MaxProductOfTwoArrayElement maxProductOfTwoArrayElement = new MaxProductOfTwoArrayElement();
+        System.out.println(maxProductOfTwoArrayElement.maxProduct(test_nums_1));
+        System.out.println(maxProductOfTwoArrayElement.maxProduct(test_nums_2));
+        System.out.println(maxProductOfTwoArrayElement.maxProduct(test_nums_3));
+
+        System.out.println("TESTING RELATIVE RANKS...");
+        RelativeRanks relativeRanks = new RelativeRanks();
+        int[] score_1 = new int[]{5,4,3,2,1};
+        int[] score_2 = new int[]{10,3,8,9,4};
+
+        System.out.println(relativeRanks.findRelativeRanks(score_1).toString());
+        System.out.println(relativeRanks.findRelativeRanks(score_2).toString());
+
+        System.out.println("Testing Rotated Digits...");
+        int rotated_digit_num = 10;
+        RotatedDigits rotatedDigits = new RotatedDigits();
+        System.out.println(rotatedDigits.rotatedDigits(rotated_digit_num));
+
+        System.out.println("TESTING N-th Tribonacci Number...");
+        int trib_n = 4;
+        NthTribonacciNumber nthTribonacciNumber = new NthTribonacciNumber();
+        System.out.println(nthTribonacciNumber.tribonacci(trib_n));
+        System.out.println(nthTribonacciNumber.tribonacci(25));
+
+        System.out.println("TESTING DEEPEST LEAVES SUM...");
+
+
+        System.out.println("TESTING HASHSET DESIGN...");
+
+         MyHashSet obj = new MyHashSet();
+         obj.add(1);
+         obj.add(2);
+         obj.add(3);
+         obj.remove(3);
+         boolean param_3 = obj.contains(3);
+        System.out.println(param_3);
+
+        System.out.println("TESTING 547. Number of Provinces...");
+        NumberOfProvinces numberOfProvinces = new NumberOfProvinces();
+        //test case:
+        int[][] test_graph_1 = new int[][]{{1,1,0}, {1,1,0}, {0,0,1}};
+        int[][] test_graph_2 = new int[][]{{1,0,0}, {0,1,0}, {0,0,1}};
+
+        System.out.println(numberOfProvinces.findCircleNum(test_graph_1));
+        System.out.println(numberOfProvinces.findCircleNum(test_graph_2));
+
+        System.out.println("TESTING 638. Shopping Offers...");
+        List<Integer> shopping_price = new ArrayList<>();
+        shopping_price.add(2);
+        shopping_price.add(5);
+
+        List<List<Integer>> store_offers = new ArrayList<>();
+        List<Integer> offer_1 = new ArrayList<>();
+        List<Integer> offer_2 = new ArrayList<>();
+        offer_1.add(3);
+        offer_1.add(0);
+        offer_1.add(5);
+
+        offer_2.add(1);
+        offer_2.add(2);
+        offer_2.add(10);
+
+        store_offers.add(offer_1);
+        store_offers.add(offer_2);
+
+        List<Integer> needs = new ArrayList<>();
+        needs.add(3);
+        needs.add(2);
+
+        ShoppingOffer shoppingOffer = new ShoppingOffer();
+        System.out.println(shoppingOffer.shoppingOffers(shopping_price, store_offers, needs));
+
+        System.out.println("TESTING 1323. Maximum 69 Number...");
+
+        Maximum69Number maximum69Number = new Maximum69Number();
+        System.out.println(maximum69Number.maximum69Number(9669));
+        System.out.println(maximum69Number.maximum69Number(9996));
+        System.out.println(maximum69Number.maximum69Number(9999));
+
+        System.out.println("TESTING 942. DI String Match...");
+
+        DIStringMatch diStringMatch = new DIStringMatch();
+        System.out.println(diStringMatch.diStringMatch("IDID"));
+        System.out.println(diStringMatch.diStringMatch("III"));
+        System.out.println(diStringMatch.diStringMatch("DDI"));
+
+        System.out.println("TESTING 1338. Reduce Array Size to The Half...");
+        ReduceArraySizeInHalf reduceArraySizeInHalf = new ReduceArraySizeInHalf();
+        System.out.println(reduceArraySizeInHalf.minSetSize(new int[]{3,3,3,3,5,5,5,2,2,7}));
+        System.out.println(reduceArraySizeInHalf.minSetSize(new int[]{7,7,7,7,7,7}));
+        System.out.println(reduceArraySizeInHalf.minSetSize(new int[]{1,9}));
+
+        System.out.println("TESTING 1646. Get Maximum in Generated Array...");
+
+        MaximumInGeneratedArray maximumInGeneratedArray = new MaximumInGeneratedArray();
+        System.out.println(maximumInGeneratedArray.getMaximumGenerated(7));
+        System.out.println(maximumInGeneratedArray.getMaximumGenerated(2));
+        System.out.println(maximumInGeneratedArray.getMaximumGenerated(3));
+
+        System.out.println("TESTING DIAGONAL TRAVERSAL OF A BINARY TREE...");
+
+        //build a tree
+        TreeNode root_dia = new TreeNode(8);
+        root_dia.left = new TreeNode(3);
+        root_dia.right = new TreeNode(10);
+        root_dia.left.left = new TreeNode(1);
+        root_dia.right.left = new TreeNode(6);
+        root_dia.right.left.left = new TreeNode(4);
+        root_dia.right.left.right= new TreeNode(7);
+        root_dia.right.right= new TreeNode(14);
+        root_dia.right.right.left= new TreeNode(13);
+
+        DiagonalTraversalOfBinaryTree diagonalTraversalOfBinaryTree = new DiagonalTraversalOfBinaryTree();
+        diagonalTraversalOfBinaryTree.diagonalPrint(root_dia);
+
+        System.out.println("TESTING Delivery Management System...");
+
+        DeliveryManagementSystem deliveryManagementSystem = new DeliveryManagementSystem();
+
+        System.out.println(deliveryManagementSystem.path(5, new int[]{1,2,2}, new int[]{2,3,4}, 1));
+        System.out.println(deliveryManagementSystem.path(5, new int[]{1,1,2,3,1}, new int[]{2,3,4,5,5}, 1));
+//        deliveryManagementSystem.path(5, new int[]{1,1,2,3,1}, new int[]{2,3,4,5,5}, 1);
+
+        System.out.println("TESTING 947. Most Stones Removed with Same Row or Column...");
+        System.out.println("ONGOING!!!");
+//        MostStonesRemoved mostStonesRemoved = new MostStonesRemoved();
+//        int[][] stones_1 = new int[][]{{0,0}, {0,1}, {1,0}, {1,2}, {2,1}, {2,2}};
+//        int[][] stones_2 = new int[][]{{0,0}, {0,2}, {1,1}, {2,0}, {2,2}};
+//        int[][] stones_3 = new int[][]{{0,0}};
+//        System.out.println(mostStonesRemoved.removeStones(stones_1));
+//        System.out.println(mostStonesRemoved.removeStones(stones_2));
+//        System.out.println(mostStonesRemoved.removeStones(stones_3));
+
+        System.out.println("TESTING 1465. Maximum Area of a Piece of Cake After Horizontal and Vertical Cuts...");
+
+        //test cases:
+        MaximumAreaAfterCuts maximumAreaAfterCuts = new MaximumAreaAfterCuts();
+        System.out.println(maximumAreaAfterCuts.maxArea(5,4,new int[] {1,2,4}, new int[] {1,3}));
+        System.out.println(maximumAreaAfterCuts.maxArea(5,4,new int[] {3,1}, new int[] {1}));
+        System.out.println(maximumAreaAfterCuts.maxArea(5,4,new int[] {3}, new int[] {3}));
+
+        System.out.println("TESTING 1094. Car Pooling...");
+        CarPooling carPooling = new CarPooling();
+        System.out.println(carPooling.carPooling(new int[][] {{2,1,5}, {3,3,7}}, 4));
+        System.out.println(carPooling.carPooling(new int[][] {{2,1,5}, {3,3,7}}, 5));
+        System.out.println(carPooling.carPooling(new int[][] {{2,1,5}, {3,5,7}}, 3));
+        System.out.println(carPooling.carPooling(new int[][] {{3,2,7}, {3,7,9},{8,3,9}}, 11));
+
+
+        System.out.println("TESTING Assembly Line Scheduling...");
+
+        AssemblyLineScheduling assemblyLineScheduling = new AssemblyLineScheduling();
+        int a[][] = {{4, 5, 3, 2},
+                   {2, 10, 1, 4}};
+        int t[][] = {{0, 7, 4, 5},
+                {0, 9, 2, 8}};
+        int e[] = {10, 12}, x[] = {18, 7};
+
+        System.out.println(assemblyLineScheduling.carAssembly(a, t, e, x, 4));
+
+        System.out.println("TESTING 572. Subtree of Another Tree...");
+
+        SubtreeOfAnotherTree subtreeOfAnotherTree = new SubtreeOfAnotherTree();
+        //tests tree
+        //Main Root
+        TreeNode main_root = new TreeNode(3);
+        main_root.left = new TreeNode(4);
+        main_root.right = new TreeNode(5);
+        main_root.left.left = new TreeNode(1);
+        main_root.left.right = new TreeNode(2);
+
+        //Sub root:
+        TreeNode sub_root = new TreeNode(4);
+        sub_root.left = new TreeNode(1);
+        sub_root.right = new TreeNode(2);
+
+        System.out.println(subtreeOfAnotherTree.isSubtree(main_root, sub_root));
+
+        System.out.println("TESTING 141. Linked List Cycle...");
+
+        ListNode cycle_head = new ListNode(3);
+        ListNode index_1 = new ListNode(2);
+        cycle_head.next = index_1;
+        cycle_head.next = new ListNode(0);
+        cycle_head.next = new ListNode(-4);
+        cycle_head.next = index_1;
+
+        LinkedListCycle linkedListCycle = new LinkedListCycle();
+        System.out.println(linkedListCycle.hasCycle(cycle_head));
+
+        System.out.println("TESTING 19. Remove Nth Node From End of List...");
+
+        //TEST CASE:
+        ListNode hTR = new ListNode(1);
+        hTR.next = new ListNode(2);
+        hTR.next = new ListNode(3);
+        hTR.next = new ListNode(4);
+        hTR.next = new ListNode(5);
+        hTR.next = new ListNode(6);
+
+        RemoveNthFromEndList rm = new RemoveNthFromEndList();
+        System.out.println(rm.removeNthFromEnd(hTR, 2));
+
+        System.out.println("TESTING ALIEN DICTIONARY...");
+
+        AlienDictionary alienDictionary = new AlienDictionary();
+
+        System.out.println(alienDictionary.alienOrder(new String[]{  "wrt",
+                "wrf",
+                "er",
+                "ett",
+                "rftt"
+        }));
+
+        System.out.println(alienDictionary.alienOrder(new String[]{  "z",
+                "x"
+        }));
+
+        System.out.println(alienDictionary.alienOrder(new String[]{  "z",
+                "x",
+                "z"
+        }));
         System.out.println("END OF TESTING...");
     }
 }
