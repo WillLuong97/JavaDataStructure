@@ -837,23 +837,42 @@ public class Main {
 
         System.out.println("TESTING ALIEN DICTIONARY...");
 
-        AlienDictionary alienDictionary = new AlienDictionary();
+//        AlienDictionary alienDictionary = new AlienDictionary();
+//
+//        System.out.println(alienDictionary.alienOrder(new String[]{  "wrt",
+//                "wrf",
+//                "er",
+//                "ett",
+//                "rftt"
+//        }));
+//
+//        System.out.println(alienDictionary.alienOrder(new String[]{  "z",
+//                "x"
+//        }));
+//
+//        System.out.println(alienDictionary.alienOrder(new String[]{  "z",
+//                "x",
+//                "z"
+//        }));
 
-        System.out.println(alienDictionary.alienOrder(new String[]{  "wrt",
-                "wrf",
-                "er",
-                "ett",
-                "rftt"
-        }));
+        System.out.println("1718. Construct the Lexicographically Largest Valid Sequence...");
 
-        System.out.println(alienDictionary.alienOrder(new String[]{  "z",
-                "x"
-        }));
+        //Test cases:
+        int n_lexi_1 = 3;
+        int n_lexi_2 = 5;
+//
+//        ConstructLexicoLargestValidSequence constructLexicoLargestValidSequence = new ConstructLexicoLargestValidSequence();
+//
+//        System.out.println(Arrays.toString(constructLexicoLargestValidSequence.constructDistancedSequence(n_lexi_1)));
+//        System.out.println(constructLexicoLargestValidSequence.constructDistancedSequence(n_lexi_2));
 
-        System.out.println(alienDictionary.alienOrder(new String[]{  "z",
-                "x",
-                "z"
-        }));
+        System.out.println("TESTING 1405. Longest Happy String\n");
+
+        LongestHappyString longestHappyString = new LongestHappyString();
+        System.out.println(longestHappyString.longestDiverseString(1,1,7));
+        System.out.println(longestHappyString.longestDiverseString(2,2,1));
+        System.out.println(longestHappyString.longestDiverseString(7,1,0));
+
         System.out.println("END OF TESTING...");
     }
 }
