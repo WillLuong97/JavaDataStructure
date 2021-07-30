@@ -873,6 +873,20 @@ public class Main {
         System.out.println(longestHappyString.longestDiverseString(2,2,1));
         System.out.println(longestHappyString.longestDiverseString(7,1,0));
 
+
+        System.out.println("TESTING LONGEST INCREASING SUBSEQUENCES...\n");
+
+        //test cases:
+
+        System.out.println("TESTING BINARY TREE POSTORDER TRAVERSAL...");
+
+        TreeNode post_root = new TreeNode(1);
+        post_root.right = new TreeNode(2);
+        post_root.right.left = new TreeNode(3);
+        PostOrderTraversal postOrderTraversal = new PostOrderTraversal();
+        System.out.println(postOrderTraversal.postorderTraversal(post_root));
+
+
         System.out.println("END OF TESTING...");
     }
 }
