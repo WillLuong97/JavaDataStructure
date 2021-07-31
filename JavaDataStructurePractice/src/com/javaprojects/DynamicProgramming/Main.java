@@ -886,6 +886,9 @@ public class Main {
         PostOrderTraversal postOrderTraversal = new PostOrderTraversal();
         System.out.println(postOrderTraversal.postorderTraversal(post_root));
 
+        System.out.println("TESTING BINARY TREE PREORDER TRAVERSAL...");
+        PreorderTraversal preorderTraversal = new PreorderTraversal();
+        System.out.println(preorderTraversal.preorderTraversal(post_root));
 
         System.out.println("END OF TESTING...");
     }
