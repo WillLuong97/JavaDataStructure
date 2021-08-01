@@ -890,6 +890,12 @@ public class Main {
         PreorderTraversal preorderTraversal = new PreorderTraversal();
         System.out.println(preorderTraversal.preorderTraversal(post_root));
 
+        System.out.println("382. Linked List Random Node...");
+        ListNode head_randome = new ListNode(1);
+        head_randome.next = new ListNode(2);
+        head_randome.next = new ListNode(3);
+        LinkedListRandomNode linkedListRandomNode = new LinkedListRandomNode(head_randome);
+        System.out.println(linkedListRandomNode.getRandom());
         System.out.println("END OF TESTING...");
     }
 }
