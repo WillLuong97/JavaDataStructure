@@ -836,24 +836,23 @@ public class Main {
         System.out.println(rm.removeNthFromEnd(hTR, 2));
 
         System.out.println("TESTING ALIEN DICTIONARY...");
+        AlienDictionary alienDictionary = new AlienDictionary();
 
-//        AlienDictionary alienDictionary = new AlienDictionary();
-//
-//        System.out.println(alienDictionary.alienOrder(new String[]{  "wrt",
-//                "wrf",
-//                "er",
-//                "ett",
-//                "rftt"
-//        }));
-//
-//        System.out.println(alienDictionary.alienOrder(new String[]{  "z",
-//                "x"
-//        }));
-//
-//        System.out.println(alienDictionary.alienOrder(new String[]{  "z",
-//                "x",
-//                "z"
-//        }));
+        System.out.println(alienDictionary.alienOrder(new String[]{  "wrt",
+                "wrf",
+                "er",
+                "ett",
+                "rftt"
+        }));
+
+        System.out.println(alienDictionary.alienOrder(new String[]{  "z",
+                "x"
+        }));
+
+        System.out.println(alienDictionary.alienOrder(new String[]{  "z",
+                "x",
+                "z"
+        }));
 
         System.out.println("1718. Construct the Lexicographically Largest Valid Sequence...");
 
