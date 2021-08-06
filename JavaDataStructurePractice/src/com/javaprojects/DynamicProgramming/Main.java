@@ -1,6 +1,7 @@
 package com.javaprojects.DynamicProgramming;
 
 import com.javaprojects.DynamicProgramming.Controller.AmazonOA.DynamicProgramming.AssemblyLineScheduling;
+import com.javaprojects.DynamicProgramming.Controller.AmazonOA.DynamicProgramming.UniquePath;
 import com.javaprojects.DynamicProgramming.Controller.AmazonOA.MinCostOfConnectionForAllNodes;
 import com.javaprojects.DynamicProgramming.Controller.BackTracking.*;
 import com.javaprojects.DynamicProgramming.Controller.*;
@@ -895,6 +896,15 @@ public class Main {
         head_randome.next = new ListNode(3);
         LinkedListRandomNode linkedListRandomNode = new LinkedListRandomNode(head_randome);
         System.out.println(linkedListRandomNode.getRandom());
+
+        System.out.println("TESTING UNIQUE PATH...");
+
+        //test case:
+        UniquePath uniquePath = new UniquePath();
+        System.out.println(uniquePath.uniquePaths(3,7));
+        System.out.println(uniquePath.uniquePaths(3,2));
+        System.out.println(uniquePath.uniquePaths(3,3));
+
         System.out.println("END OF TESTING...");
     }
 }
