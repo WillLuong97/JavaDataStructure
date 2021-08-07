@@ -905,6 +905,17 @@ public class Main {
         System.out.println(uniquePath.uniquePaths(3,2));
         System.out.println(uniquePath.uniquePaths(3,3));
 
+        System.out.println("TESTING DIAMETER OF BINARY TREE...");
+        TreeNode dia_1 = new TreeNode(1);
+        dia_1.left = new TreeNode(2);
+        dia_1.right = new TreeNode(3);
+        dia_1.left.left = new TreeNode(4);
+        dia_1.left.right = new TreeNode(5);
+
+        BinaryTreeDiameter binaryTreeDiameter = new BinaryTreeDiameter();
+
+        System.out.println(binaryTreeDiameter.diameterOfBinaryTree(dia_1));
+
         System.out.println("END OF TESTING...");
     }
 }
