@@ -49,11 +49,7 @@ What if the linked list is extremely large and its length is unknown to you?
 Could you solve this efficiently without using extra space?
 *  */
 public class LinkedListRandomNode {
-    /** @param head The linked list's head.
-    Note that the head is guaranteed to be not null, so it contains at least one node.
-     The constructor will create an array that can store all element from the linked list
-     O(n)
-     */
+    /**
     private List<Integer> converted_array = new ArrayList<>();
     public LinkedListRandomNode(ListNode head) {
         //convert the linked list into the arrary
@@ -65,9 +61,52 @@ public class LinkedListRandomNode {
 
     /** Returns a random node's value.
      * Take the converted array size and caluclate the probabilty of selecting an element
-     * O(1) */
+     * O(1)
+
     public int getRandom() {
         int pick = (int) (Math.random() * this.converted_array.size());
         return this.converted_array.get(pick);
     }
+     **/
+
+    /** Reservoir sampling implementation:
+    Reservoir sampling will help us to find the random value from an unknown list size
+     Time complexity: O(n),
+     Space complexity: O(1), no need extra space to store any data structure
+
+
+     Algorithm: Given the intuition above, we can now put it into implementation as follows:
+
+     In the init() function, we simply keep the head of the linked list, rather than converting it into array.
+
+     In the getRandom() function, we then do a reservoir sampling starting from the head of the linked list. More specifically, we scan the element one by one and decide whether we should put it into the reservoir (which in our case case happens to be of size one).
+
+
+     **/
+    private final ListNode head;
+    public LinkedListRandomNode(ListNode head){
+        this.head = head;
+    }
+    //create a resevoifr sampling of size 1, since only need to pick one, iterate through the linked list and determine to see if the current element can be put ino the reservoir or not
+    public int getRandom(){
+        //create a resevoir of size 1:
+        int chosenValue = 0;
+        int scope = 1;
+        ListNode current = head;
+        while(current != null){
+            //determine to see if want to include the current element into then reservoir sampling and still maintain  the equal probabilty
+            if(Math.random() < 1.0 / scope){
+                chosenValue = current.val;
+            }
+            scope += 1;
+            current = current.next;
+        }
+
+        return chosenValue;
+
+    }
+
+
+
+
 }
