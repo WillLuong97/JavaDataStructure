@@ -1,6 +1,7 @@
 package com.javaprojects.DynamicProgramming;
 
 import com.javaprojects.DynamicProgramming.Controller.AmazonOA.DynamicProgramming.AssemblyLineScheduling;
+import com.javaprojects.DynamicProgramming.Controller.AmazonOA.DynamicProgramming.CountNumberOfTeams;
 import com.javaprojects.DynamicProgramming.Controller.AmazonOA.DynamicProgramming.UniquePath;
 import com.javaprojects.DynamicProgramming.Controller.AmazonOA.MinCostOfConnectionForAllNodes;
 import com.javaprojects.DynamicProgramming.Controller.BackTracking.*;
@@ -914,8 +915,30 @@ public class Main {
 
         BinaryTreeDiameter binaryTreeDiameter = new BinaryTreeDiameter();
 
-        System.out.println(binaryTreeDiameter.diameterOfBinaryTree(dia_1));
+//        System.out.println(binaryTreeDiameter.diameterOfBinaryTree(dia_1));
 
+        System.out.println("TESTING 1962. Remove Stones to Minimize the Total...");
+
+        //test cases:
+        int[] pipes_1 = new int[]{5,4,9};
+        int k = 2;
+        int[] pipes_2 = new int[]{4,3,6,7};
+        int k_2 = 3;
+
+        RemoveStoneToMinimizeTotal removeStoneToMinimizeTotal = new RemoveStoneToMinimizeTotal();
+//        System.out.println(removeStoneToMinimizeTotal.minStoneSum(pipes_1, k));
+//        System.out.println(removeStoneToMinimizeTotal.minStoneSum(pipes_2, k_2));
+
+        System.out.println("TESTING 1395. Count Number of Teams...");
+        //test cases:
+        int[] rating_1 = new int[]{2,5,3,4,1};
+        int[] rating_2 = new int[]{2,1,3};
+        int[] rating_3 = new int[]{1,2,3,4};
+
+        CountNumberOfTeams countNumberOfTeams = new CountNumberOfTeams();
+        System.out.println(countNumberOfTeams.numTeams(rating_1));
+        System.out.println(countNumberOfTeams.numTeams(rating_2));
+        System.out.println(countNumberOfTeams.numTeams(rating_3));
         System.out.println("END OF TESTING...");
     }
 }
