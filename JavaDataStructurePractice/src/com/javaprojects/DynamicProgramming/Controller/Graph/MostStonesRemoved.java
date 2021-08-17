@@ -1,15 +1,12 @@
 package com.javaprojects.DynamicProgramming.Controller.Graph;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /*
 On a 2D plane, we place n stones at some integer coordinate points. Each coordinate point may have at most one stone.
 
 A stone can be removed if it shares either the same row or the same column as another stone that has not been removed.
-   0  0 0
+   *  * 0
 => * 0 0
    0 * 0
 Given an array stones of length n where stones[i] = [xi, yi] represents the location of the ith stone, return the largest possible number of stones that can be removed.
@@ -19,14 +16,17 @@ Example 1:
 Input: stones = [[0,0],[0,1],[1,0],[1,2],[2,1],[2,2]]
 
         0 1 2           0 [0,1]     0 [0,1]
-      0 * * 0           1 [0,2]     1 [0,2]
-      1 * 0 *           2 [1,2]     2 [1,2]
-      2 0 * *
+      0 0 0 0           1 [0,2]     1 [0,2]
+      1 0 0 0         2 [1,2]     2 [1,2]
+      2 0 0 *
+
 
  dfs:
  pick a stone, check its neighbor, if its neighbor is rock, then increment the counter, because this rock can be removed. If the current_neighbor
  does not have a rock, then branch out from that neighbor and see if it does lead to another rock. repeat this process until we cannot branch out anymore.
 
+
+This can also be connected component problems
 counter = 5
 
 Output: 5
@@ -60,35 +60,45 @@ No two stones are at the same coordinate point.
 
 *  */
 public class MostStonesRemoved {
-    //hashmap to store the key and row values:
-    private Map<Integer, List<Integer>> rowMap = new HashMap<>();
-    private Map<Integer, List<Integer>> colMap = new HashMap<>();
-
-    //array to store the parent node
-    int[] parent;
     public int removeStones(int[][] stones) {
         int n = stones.length;
-        this.parent = new int[n];
-        int counter = 0;
-        //init the parent list with the parent node
-        for(int i = 0; i < n; i++){
-            parent[i] = i;
-        }
-        //build out two hashmap to store the element in the left and right
-        for(int i = 0; i < n; i++){
-            int[] curr_stone = stones[i];
-            //extracting the dimension of the current stone
-            int row = curr_stone[0];
-            int col = curr_stone[1];
-            rowMap.putIfAbsent(row, new ArrayList<>());
-            rowMap.get(row).add(col);
-
-            colMap.putIfAbsent(col, new ArrayList<>());
-            colMap.get(col).add(row);
+        //create a map to represent the graph
+        Map<Integer, List<Integer>> map = new HashMap<>();
+        //build out the graph
+        for(int [] stone: stones){
+            map.computeIfAbsent(stone[0], x -> new ArrayList<>()).add(~stone[1]);
+            map.computeIfAbsent(~stone[1],x -> new ArrayList<>()).add(stone[0]);
         }
 
-        //NOT YET FINISHED!!!! CONTINUE WORKING ON LATER.
-        return counter;
+        int component = 0;
+        Set<Integer> visited = new HashSet<>();
+        for(int[] stone : stones){
+            for(int i = 0; i < 2; i++){
+                int current = i == 0 ? stone[0] : ~stone[1];
+                if(!visited.contains(current)){
+                    component += 1;
+                    dfs(map, visited, current);
+                }
+            }
+        }
+
+        return n - component;
+
+    }
+
+    //helper method to run dfs through the graph to find the connected compoenets
+    private void dfs(Map<Integer, List<Integer>> map, Set<Integer> visited, int i){
+        if(visited.contains(i)){
+            return;
+        }
+
+        visited.add(i);
+        List<Integer> children  = map.get(i);
+        for(Integer child : children){
+            if(!visited.contains(child)){
+                dfs(map, visited, child);
+            }
+        }
     }
 
 }
