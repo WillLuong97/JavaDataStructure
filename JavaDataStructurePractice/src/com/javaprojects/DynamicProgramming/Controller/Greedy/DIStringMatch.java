@@ -32,6 +32,10 @@ Approach: Keep track of largest and smallest element as we go through the list. 
 *  */
 public class DIStringMatch {
     public int[] diStringMatch(String s) {
+        //BASE CASE: the input string is empty
+        if(s.length() <= 0){
+            throw new RuntimeException("Invalid Input: String s is empty or have invalid sizes!");
+        }
         int n = s.length();
         int low = 0;
         int high = n;
