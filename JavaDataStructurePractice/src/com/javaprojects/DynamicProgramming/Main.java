@@ -25,6 +25,7 @@ import com.sun.source.tree.Tree;
 //import com.sun.java.accessibility.util.TopLevelWindowListener;
 //import jdk.swing.interop.SwingInterOpUtils;
 
+import javax.security.auth.kerberos.KerberosCredMessage;
 import java.util.*;
 
 public class Main {
@@ -759,7 +760,7 @@ public class Main {
 
         System.out.println("TESTING 947. Most Stones Removed with Same Row or Column...");
         System.out.println("ONGOING!!!");
-//        MostStonesRemoved mostStonesRemoved = new MostStonesRemoved();
+        MostStonesRemoved mostStonesRemoved = new MostStonesRemoved();
 //        int[][] stones_1 = new int[][]{{0,0}, {0,1}, {1,0}, {1,2}, {2,1}, {2,2}};
 //        int[][] stones_2 = new int[][]{{0,0}, {0,2}, {1,1}, {2,0}, {2,2}};
 //        int[][] stones_3 = new int[][]{{0,0}};
@@ -915,7 +916,7 @@ public class Main {
 
         BinaryTreeDiameter binaryTreeDiameter = new BinaryTreeDiameter();
 
-//        System.out.println(binaryTreeDiameter.diameterOfBinaryTree(dia_1));
+        System.out.println(binaryTreeDiameter.diameterOfBinaryTree(dia_1));
 
         System.out.println("TESTING 1962. Remove Stones to Minimize the Total...");
 
@@ -939,6 +940,20 @@ public class Main {
         System.out.println(countNumberOfTeams.numTeams(rating_1));
         System.out.println(countNumberOfTeams.numTeams(rating_2));
         System.out.println(countNumberOfTeams.numTeams(rating_3));
+
+
+        System.out.println("TESTING 706. Design HashMap...");
+
+        //test cases:
+
+        System.out.println("TESTING 218. The Skyline Problem...");
+
+        //test cases:
+        int[][] building = new int[][]{{2,9,10},{3,7,15}, {5,12,12}, {15,20,10}, {19,24,8}};
+        int[][] building1 = new int[][]{{0,2,3}, {2,5,3}};
+        SkylineProblem skylineProblem = new SkylineProblem();
+        System.out.println(skylineProblem.getSkyline(building));
+        System.out.println(skylineProblem.getSkyline(building1));
         System.out.println("END OF TESTING...");
     }
 }
