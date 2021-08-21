@@ -952,8 +952,16 @@ public class Main {
         int[][] building = new int[][]{{2,9,10},{3,7,15}, {5,12,12}, {15,20,10}, {19,24,8}};
         int[][] building1 = new int[][]{{0,2,3}, {2,5,3}};
         SkylineProblem skylineProblem = new SkylineProblem();
-        System.out.println(skylineProblem.getSkyline(building));
-        System.out.println(skylineProblem.getSkyline(building1));
+//        System.out.println(skylineProblem.getSkyline(building));
+//        System.out.println(skylineProblem.getSkyline(building1));
+
+        System.out.println("TESTING 894. All Possible Full Binary Trees...");
+        //test cases:
+        int n_tree_1 = 7;
+        int n_tree_2 = 3;
+        AllPossibleFullBinaryTrees allPossibleFullBinaryTrees = new AllPossibleFullBinaryTrees();
+        System.out.println(allPossibleFullBinaryTrees.allPossibleFBT(n_tree_1));
+        System.out.println(allPossibleFullBinaryTrees.allPossibleFBT(n_tree_2));
         System.out.println("END OF TESTING...");
     }
 }
