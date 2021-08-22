@@ -962,6 +962,22 @@ public class Main {
         AllPossibleFullBinaryTrees allPossibleFullBinaryTrees = new AllPossibleFullBinaryTrees();
         System.out.println(allPossibleFullBinaryTrees.allPossibleFBT(n_tree_1));
         System.out.println(allPossibleFullBinaryTrees.allPossibleFBT(n_tree_2));
+
+        System.out.println("TESTING 1206. Design Skiplist...");
+
+        Skiplist skiplist = new Skiplist();
+        skiplist.add(1);
+        skiplist.add(2);
+        skiplist.add(3);
+        skiplist.search(0); // return False
+        skiplist.add(4);
+        skiplist.search(1); // return True
+        skiplist.erase(0);  // return False, 0 is not in skiplist.
+        skiplist.erase(1);  // return True
+        skiplist.search(1); // return False, 1 has already been erased.
+
         System.out.println("END OF TESTING...");
+
+
     }
 }

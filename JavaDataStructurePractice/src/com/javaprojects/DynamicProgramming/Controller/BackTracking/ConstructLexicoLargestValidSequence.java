@@ -29,5 +29,6 @@ Constraints:
 public class ConstructLexicoLargestValidSequence {
     public int[] constructDistancedSequence(int n) {
         throw new RuntimeException("NOT YET IMPLEMNTED!");
+        if(n < 0){
     }
 }
