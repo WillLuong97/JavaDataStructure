@@ -976,6 +976,19 @@ public class Main {
         skiplist.erase(1);  // return True
         skiplist.search(1); // return False, 1 has already been erased.
 
+        System.out.println("TESTING 1638. Count Substrings That Differ by One Character...");
+        CountSubstringThatDifferBy1Char countSubstringThatDifferBy1Char = new CountSubstringThatDifferBy1Char();
+        System.out.println(countSubstringThatDifferBy1Char.countSubstrings("aba", "baba"));
+        System.out.println(countSubstringThatDifferBy1Char.countSubstrings("a", "a"));
+        System.out.println(countSubstringThatDifferBy1Char.countSubstrings("abe", "bbc"));
+
+        System.out.println("TESTING 1525. Number of Good Ways to Split a String...");
+        NumberOfGoodSplitStringWay numberOfGoodSplitStringWay = new NumberOfGoodSplitStringWay();
+        System.out.println(numberOfGoodSplitStringWay.numSplits("aacaba"));
+        System.out.println(numberOfGoodSplitStringWay.numSplits("abcd"));
+        System.out.println(numberOfGoodSplitStringWay.numSplits("aaaaa"));
+        System.out.println(numberOfGoodSplitStringWay.numSplits("acbadbaada"));
+
         System.out.println("END OF TESTING...");
 
 
